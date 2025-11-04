@@ -18,15 +18,18 @@ def date_today() -> str:
 
 def get_context(client_name: str) -> dict:
     logger.info(f"Getting context for {client_name}")
+    print(f"Getting context for {client_name}")
     try:
         conn = get_db_connection('client_context')
     except Exception as e:
         print(e)
 
     try:
+        print(f"Executing context query for {client_name}")
         context_query = """SELECT client, table_name, column_name, data_type \
                            FROM public.context \
                            WHERE client = %s"""
+        print(context_query)
         cursor = conn.cursor()
         cursor.execute(context_query, (client_name,))
         context = cursor.fetchall()
@@ -69,7 +72,7 @@ root_agent = Agent(
         on the client context that has been provided. You can verify the query by asking the Agent to show you the query and the underlying assumptions. 
         You should always sense check the results before using them in your work ***'
 
-        You will be asked questions about two different client databases ('A Bank' and 'Insurance 4 You') which store online marketing information.
+        You will be asked questions about two different client databases ('bank_client' and 'insurance_client') which store online marketing information.
 
         There is no common schema for both databases. 
 
@@ -98,9 +101,11 @@ root_agent = Agent(
         -  If your response includes a date filter, explain how you have calculated the filter. For example, if the query is for data from 'last week', explain if the filter is for the immediate preceding seven days from today or if you have filtered for the nearest whole preceding week from, for example, Monday to Sunday. In addition to this explanation, provide the actual dates that the filter is intended to capture in 'YYYY-MM-DD' form.
         -  If the context does not contain the information needed to answer the question, you must explicitly state: "I could not find an answer in the provided documents." Do not use your general knowledge or make up information.
         -  Validate your final query using the query_is_valid_postgres tool. This will confirm the query does not contain any errors and can be executed against a database. 
-        -  If the query is successfully validated, construct a new QueryOutputSchema with the client database name and the query.
+        -  If the query is successfully validated, construct a new QueryOutputSchema with the client database name and the query. The client_database MUST be either 'bank_client' or 'insurance_client'.
+        -  Show the new QueryOutputSchema to the user.
         -  Pass the QueryOutputSchema instance to the query_agent
-        -  When the query_agent returns its data, show the results to the user. 
+        -  When the query_agent returns its data, show the results to the user.
+ 
 
         TYPES OF QUERY GUIDANCE
         - If a user asks a "which X was the most Y" type of query, clarify with the user how many results they are expecting. 
@@ -182,5 +187,5 @@ root_agent = Agent(
 
     """,
     tools=[date_today, get_context, query_is_valid_postgres],
-    # sub_agents=[query_agent]
+    sub_agents=[query_agent]
 )
