@@ -66,7 +66,7 @@ def execute_query(database_name: str, query: str) -> dict:
 
 query_agent = Agent(
     name="query_agent",
-    model='gemini-2.5-pro',
+    model='gemini-2.5-flash',
     description="Executes a provided SQL query against a database and returns the result to the Main Agent",
     instruction=
     """
