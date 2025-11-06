@@ -1,16 +1,23 @@
 import psycopg2
 import logging
+import os
 from google.adk.agents import Agent
 from datetime import datetime
+
+from google.adk.tools import AgentTool
+
 from db_connection.db_connection import get_db_connection
 from postgres_validator import query_is_valid_postgres
 from .sub_agent.agent import query_agent
-from .query_output_schema import QueryOutputSchema
 
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+try:
+    google_api_key = os.environ.get('GOOGLE_API_KEY')
+except Exception as e:
+    logger.error(f'An error occurred while accessing GOOGLE_API_KEY: {e}')
 
 def date_today() -> str:
     return datetime.now().strftime("%Y-%m-%d")
@@ -29,7 +36,6 @@ def get_context(client_name: str) -> dict:
         context_query = """SELECT client, table_name, column_name, data_type \
                            FROM public.context \
                            WHERE client = %s"""
-        print(context_query)
         cursor = conn.cursor()
         cursor.execute(context_query, (client_name,))
         context = cursor.fetchall()
@@ -68,10 +74,6 @@ root_agent = Agent(
         You are an POSTGRESQL generator. You take user questions about a data set and provide validated and efficient
         POSTGRESQL queries that can be run against a specific database.
 
-        At the start of every session, you MUST tell the user: '***This Agent generates and executes database queries based 
-        on the client context that has been provided. You can verify the query by asking the Agent to show you the query and the underlying assumptions. 
-        You should always sense check the results before using them in your work ***'
-
         You will be asked questions about two different client databases ('bank_client' and 'insurance_client') which store online marketing information.
 
         There is no common schema for both databases. 
@@ -82,7 +84,7 @@ root_agent = Agent(
 
         ***ESSENTIAL PROCEDURE***
 
-        When a user asks a question, you MUST follow these steps:
+        When a user asks a question, you MUST follow ALL these steps:
 
         -  Establish which database the user is wanting to query. If it is not clear, you should ask the user to clarify. The database should be either 'A Bank' or 'Insurance 4 You'.
         -  If you do not already have context for that client, use the `get_context` tool to access client specific schema information and formulas for calculated fields.
@@ -101,10 +103,15 @@ root_agent = Agent(
         -  If your response includes a date filter, explain how you have calculated the filter. For example, if the query is for data from 'last week', explain if the filter is for the immediate preceding seven days from today or if you have filtered for the nearest whole preceding week from, for example, Monday to Sunday. In addition to this explanation, provide the actual dates that the filter is intended to capture in 'YYYY-MM-DD' form.
         -  If the context does not contain the information needed to answer the question, you must explicitly state: "I could not find an answer in the provided documents." Do not use your general knowledge or make up information.
         -  Validate your final query using the query_is_valid_postgres tool. This will confirm the query does not contain any errors and can be executed against a database. 
-        -  If the query is successfully validated, construct a new QueryOutputSchema with the client database name and the query. The client_database MUST be either 'bank_client' or 'insurance_client'.
-        -  Show the new QueryOutputSchema to the user.
-        -  Pass the QueryOutputSchema instance to the query_agent
-        -  When the query_agent returns its data, show the results to the user.
+        -  If the query is successfully validated, construct a new json Query object with the client database name and the query as keys and values. For example:
+            {
+                "client_database": "bank_client",
+                "query": "SELECT SUM("Impressions") AS "total_impressions" FROM public.google_ads WHERE "Date" >= '2025-02-01' AND "Date" <= '2025-02-28"
+            }
+           N.B The client_database MUST be either 'bank_client' or 'insurance_client'.
+        -  Pass the Query object to the query_agent Agent-as-Tool
+        -  Wait for the query_agent to returns its response
+        -  CRITICAL INSTRUCTION: When the query_agent returns its response, you MUST inform the user that this has happened and show the results to the user.
  
 
         TYPES OF QUERY GUIDANCE
@@ -241,6 +248,5 @@ root_agent = Agent(
          
 
     """,
-    tools=[date_today, get_context, query_is_valid_postgres],
-    sub_agents=[query_agent]
+    tools=[date_today, get_context, query_is_valid_postgres, AgentTool(agent=query_agent)],
 )
