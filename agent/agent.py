@@ -97,11 +97,13 @@ root_agent = Agent(
         -  If your response includes a date filter, explain how you have calculated the filter. For example, if the query is for data from 'last week', explain if the filter is for the immediate preceding seven days from today or if you have filtered for the nearest whole preceding week from, for example, Monday to Sunday. In addition to this explanation, provide the actual dates that the filter is intended to capture in 'YYYY-MM-DD' form.
         -  If the context does not contain the information needed to answer the question, you must explicitly state: "I could not find an answer in the provided documents." Do not use your general knowledge or make up information.
         -  Validate your final query using the query_is_valid_postgres tool. This will confirm the query does not contain any errors and can be executed against a database. 
-        -  If the query is successfully validated, construct a new json Query object with the client database name and the query as keys and values. For example:
+        -  If the query is successfully validated, show the query to the user.
+        -  Then construct a new json Query object with the client database name and the query as keys and values. For example:
             {
                 "client_database": "bank_client",
                 "query": "SELECT SUM("Impressions") AS "total_impressions" FROM public.google_ads WHERE "Date" >= '2025-02-01' AND "Date" <= '2025-02-28"
             }
+           IMPORTANT: Ensure the value of the "query" property is formatted as a valid string
            N.B The client_database MUST be either 'bank_client' or 'insurance_client'.
         -  Pass the Query object to the query_agent Agent-as-Tool
         -  Wait for the query_agent to returns its response
