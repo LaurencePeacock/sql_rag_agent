@@ -9,7 +9,6 @@ load_dotenv('.env')
 
 def get_db_connection(db_name: str):
     logger.info(f"Establishing database connection for {db_name}")
-    print(f"Establishing database connection for {db_name}")
     try:
         conn_params = {
             "host": os.environ["DB_HOST"],
@@ -20,10 +19,7 @@ def get_db_connection(db_name: str):
         }
         conn = psycopg2.connect(**conn_params)
         logger.info(f"Successfully connected to database '{db_name}'.")
-        print(f"Successfully connected to database '{db_name}'.")
         return conn
     except (psycopg2.OperationalError, KeyError) as e:
         logger.error(f"Could not connect to database '{db_name}': {e}")
-        print(f"Could not connect to database '{db_name}': {e}")
-        logger.error("Please ensure DB_HOST, DB_PORT, DB_USER, and DB_PASSWORD are set in your .env file.")
         return None

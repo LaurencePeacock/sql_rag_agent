@@ -3,9 +3,7 @@ import logging
 import os
 from google.adk.agents import Agent
 from datetime import datetime
-
 from google.adk.tools import AgentTool
-
 from db_connection.db_connection import get_db_connection
 from postgres_validator import query_is_valid_postgres
 from .sub_agent.agent import query_agent
@@ -25,14 +23,13 @@ def date_today() -> str:
 
 def get_context(client_name: str) -> dict:
     logger.info(f"Getting context for {client_name}")
-    print(f"Getting context for {client_name}")
     try:
         conn = get_db_connection('client_context')
     except Exception as e:
         print(e)
 
     try:
-        print(f"Executing context query for {client_name}")
+        logger.info(f"Executing context query for {client_name}")
         context_query = """SELECT client, table_name, column_name, data_type \
                            FROM public.context \
                            WHERE client = %s"""
@@ -53,9 +50,6 @@ def get_context(client_name: str) -> dict:
         cursor.execute(client_week_query, (client_name,))
         week_results = cursor.fetchall()
         client_week = f'{week_results[0][0]} - {week_results[0][1]}' if week_results else 'No data available'
-
-        logger.info(f"Returning context")
-        logger.info(f"First line of context: {context[0]} ")
 
         return {
             "context": context,

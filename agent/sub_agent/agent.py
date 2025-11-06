@@ -23,16 +23,12 @@ def serialise_result(result: List[Tuple]
         serializable_row = []
         for value in row:
             if isinstance(value, Decimal):
-                # Convert Decimal to float
                 serializable_row.append(float(value))
             elif isinstance(value, (date, datetime)):
-                # Convert date/datetime to ISO format string
                 serializable_row.append(value.isoformat())
             elif isinstance(value, time):
-                # Convert time to ISO format string
                 serializable_row.append(value.isoformat())
             else:
-                # Keep other types as-is (str, int, bool, None)
                 serializable_row.append(value)
         serializable_result.append(serializable_row)
 
@@ -48,21 +44,17 @@ def execute_query(database_name: str, query: str) -> dict:
     """
     conn = None
     try:
-        print(f"Executing generated query")
+        logger.info(f"Executing query")
         conn = get_db_connection(database_name)
         cursor = conn.cursor()
         cursor.execute(query)
         results = cursor.fetchall()
-        print('RESULTS')
-        print(results)
         json_results = serialise_result(results)
         return json_results
     except psycopg2.OperationalError as e:
-        print(e)
         logger.error(f"Could not execute query: {e}")
         return None
     except Exception as e:
-        print(e)
         logger.error(f"Unexpected error executing query: {e}")
         return None
     finally:
