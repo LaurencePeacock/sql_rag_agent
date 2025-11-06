@@ -114,7 +114,8 @@ INSERT INTO context(
     ('bank_client', 'meta', 'video_views_to_25_percent', 'INTEGER', CURRENT_TIMESTAMP, TRUE),
     ('bank_client', 'meta', 'video_views_to_50_percent', 'INTEGER', CURRENT_TIMESTAMP, TRUE),
     ('bank_client', 'meta', 'video_views_to_75_percent', 'INTEGER', CURRENT_TIMESTAMP, TRUE),
-    ('bank_client', 'meta', 'video_views_to_100_percent', 'INTEGER', CURRENT_TIMESTAMP, TRUE);
+    ('bank_client', 'meta', 'video_views_to_100_percent', 'INTEGER', CURRENT_TIMESTAMP, TRUE),
+    ('bank_client', 'meta', 'purchase_revenue', 'DECIMAL(10, 2)', CURRENT_TIMESTAMP, TRUE);
 
 
 
