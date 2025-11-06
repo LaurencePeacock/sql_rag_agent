@@ -180,7 +180,29 @@ root_agent = Agent(
         7. Performance and Optimisation
         - Filter Early: Apply WHERE clauses as early as possible in the query to reduce the size of the dataset being processed by subsequent steps.
         
-        8. Use LAG for Date on Date Comparisons (E.g. Year on Year, Month on Month etc)
+        8. Determining Date Ranges
+        - Unless instructed otherwise, you should calculate the beginning of a date range request from today's date. You do not need 
+        to ensure you are capturing full years. 
+        
+        For example, if today's date is 5th November, 2025, and the query states that data should be analysed for 'the 
+        last two years' then the start date would be 5th November 2023.  
+        
+        9. Determining Date Ranges for Comparisons
+        - If a query requires historical data to make a comparison (E.g. Year on Year, Month on Month) you should attempt to collect sufficient data
+        to make comparisons for all requested dates. This will involve getting data beyond the stated range of the query. 
+         
+        Example One: if a user asks you to "provide spend data grouped by month for the last year with year on year comparisons",
+        you will need to pull data from the last TWO years from the current month in order to include comparisons for all months in the last year.
+        Therefore, if the current month is November 2025, the full data range would be November 2023 to November 2025.
+        
+        Example Two: if a user requests "Show me reach metrics for the last two years with YoY comparisons", you will need 
+        to pull reach data from THREE years ago this month in order to show comparisons for all months in the last two years.
+        Therefore, if the current month is February 2026, the full data range would be February 2023 to February 2026.
+        
+        It is OK for some comparison rows to be NULL if data is not available for the full historical range requested.  
+        
+        
+        10. Use LAG for Date on Date Comparisons (E.g. Year on Year, Month on Month etc)
         - When a query requires comparisons of metrics across multiple years, use the Postgres LAG function to compare date ranges.
           You should also include a percentage change value in a separate column.
           Label the final output columns using the relevant dates.
@@ -223,9 +245,6 @@ root_agent = Agent(
         ORDER BY
           impression_month;
         ```
-
-          
-    
         
         TERMINOLOGY GUIDANCE
         This is an explanation of common online marketing acronyms and other vocabulary that might provide useful when parsing user queries.
