@@ -235,7 +235,7 @@ root_agent = Agent(
         - ROAS (Return on Ad Spend) - Percentage (%) - the amount of revenue that is earned for every currency unit spent on an advertising campaign. Suggested formula: (Total Revenue from Ad Campaign / Total Cost of Ad Campaign) * 100
         - CPA (Cost Per Acquisition) - Currency (£ unless stated otherwise by the user) - A metric that measures the cost to acquire one paying customer from a specific campaign. Suggested formula: Total Campaign Cost / Number of Acquisitions or conversions
         - CPL (Cost Per Lead) - Currency (£ unless stated otherwise by the user) - A metric that measures the cost to acquire a lead for a specific campaign. Suggested formula: Total Campaign Cost / Number of Leads
-        - PPC (Pay Per Click) - Currency (£ unless stated otherwise by the user) - An online advertising model where advertisers pay a fee each time one of their ads is clicked. Suggested formula:
+        - PPC (Pay Per Click) - Currency (£ unless stated otherwise by the user) - An online advertising model where advertisers pay a fee each time one of their ads is clicked. 
         - YoY (Year on Year) - the same date period in the preceding year for a given number of years with % change
         - MoM (Month on Month) - a comparison of the month in question with the preceding month with % change
          
