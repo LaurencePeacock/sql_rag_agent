@@ -1,3 +1,15 @@
+# SQL RAG Agent
+
+#### Scenario: 
+You have a large datalake with structured data but no consistency around table names, columns or what data is included across multiple databases
+#### Aim: 
+For non-technical users to conduct flexible, adhoc analysis of the datalake via natural language prompts
+#### Issues: 
+Without correct context and instructions, AI Agents struggle to generate SQL queries that are accurate, relevant and verifiable
+#### Solution: 
+A Retrieval-Augmented Generation (RAG) Agent that builds SQL queries based on reliable context and validates read-only queries before returning structured feedback
+Implementation: An ADK agent is provided with tools to access a database containing schema context from which to generate queries. 
+
 ### To run the SQL RAG Agent:
 
 1. Get a Gemini API Key from https://aistudio.google.com/api-keys
