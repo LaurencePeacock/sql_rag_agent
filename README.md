@@ -41,10 +41,15 @@ If you do not have UV installed, go here: https://docs.astral.sh/uv/getting-star
 6. Select 'agent' from the 'Select an agent' dropdown
 
 7. Here are some sample prompts
+
 > What were the highest performing campaigns (top 30) across all platforms by revenue in Q2 this year? For bank_client
+ 
 > What were the average estimated views for pr campaigns for bank client grouped by tiers in October?
+ 
 > Which Instagram adsets had the best click through rate last month for bank client?
+ 
 > For insurance client between Aug and November, what was the best performing campaign across all advertising platforms. Rank by ROAS
+
 > Which keywords had the highest positions in October for Insurance Client? And which pages had the best avg monthly searches?
 
 8. To view the database, use the connection details in .env
