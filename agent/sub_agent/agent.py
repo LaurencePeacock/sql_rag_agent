@@ -5,8 +5,7 @@ import psycopg2
 import logging
 from google.adk.agents import Agent
 from pydantic import BaseModel, Field
-
-from .db_connection.db_connection import get_db_connection
+from ..db_connection.db_connection import get_db_connection
 
 logger = logging.getLogger(__name__)
 

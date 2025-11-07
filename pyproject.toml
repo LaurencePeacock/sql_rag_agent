@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
-    "google-adk>=1.17.0",
+    "google-adk[eval]>=1.17.0",
     "psycopg2-binary>=2.9.11",
     "sqlglot[rs]>=27.29.0",
 ]

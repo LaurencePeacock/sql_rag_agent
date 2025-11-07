@@ -41,6 +41,11 @@ Implementation: An ADK agent is provided with tools to access a database contain
 ```shell
    docker-compose down -v
 ```
+11. To run the eval_tests which compare previous correct responses to the agent's current response:
+```shell
+adk eval agent eval_set/sql_rag_agent.evalset.json --config_file_path eval_set/test_config.json --print_detailed_results
+```
+
 
 Please note, if you see these errors while using the agent, unfortunately these are rate limit errors or service outages from the Gemini API
 

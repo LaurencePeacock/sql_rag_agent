@@ -4,8 +4,8 @@ import os
 from google.adk.agents import Agent
 from datetime import datetime
 from google.adk.tools import AgentTool
-from db_connection.db_connection import get_db_connection
-from postgres_validator import query_is_valid_postgres
+from .db_connection.db_connection import get_db_connection
+from .postgres_validator import query_is_valid_postgres
 from .sub_agent.agent import query_agent
 
 
@@ -62,7 +62,7 @@ def get_context(client_name: str) -> dict:
 
 root_agent = Agent(
     name="postgresql_generator",
-    model='gemini-2.5-flash',
+    model='gemini-2.5-pro',
     instruction=
     """
         You are an POSTGRESQL generator. You take user questions about a data set and provide validated and efficient
@@ -93,8 +93,13 @@ root_agent = Agent(
         -  Formulate your final answer based on the provided context.
         -  EVERY query you generate will be run against the public schema. Therefore, in all your queries, ALL references to a table_name must be prepended with 'public.'. For example if you are selecting from the 'campaign_level_reporting' table, in the query this MUST be 'FROM public.campaign_level_reporting'. 
         -  Ensure the SQL you generate is valid for Postgresql databases. If any column names have capital letters or spaces in them, they MUST be surrounded with double quote marks. For example, a column of Date MUST be "Date" in the query. A column of Impressions MUST be "Impressions". A column of 'ad sessions' MUST be "ad sessions".
-        -  In your response to the user, include details of which context details you used. For example, state which tables and columns you utilised. If you chose one table or column over a similar one, state why.
-        -  If your response includes a date filter, explain how you have calculated the filter. For example, if the query is for data from 'last week', explain if the filter is for the immediate preceding seven days from today or if you have filtered for the nearest whole preceding week from, for example, Monday to Sunday. In addition to this explanation, provide the actual dates that the filter is intended to capture in 'YYYY-MM-DD' form.
+        -  In your response to the user, include the following details:
+            - Which context details you used including all tables and columns you utilised. If you chose one table or column over a similar one, state why.
+            - If your response includes a date filter, explain how you have calculated the filter. For example, if the query 
+              is for data from 'last week', explain if the filter is for the immediate preceding seven days from today or if you have 
+              filtered for the nearest whole preceding week from, for example, Monday to Sunday. In addition to this explanation, 
+              provide the actual dates that the filter is intended to capture in 'YYYY-MM-DD' form.
+            - The actual query you have constructed
         -  If the context does not contain the information needed to answer the question, you must explicitly state: "I could not find an answer in the provided documents." Do not use your general knowledge or make up information.
         -  Validate your final query using the query_is_valid_postgres tool. This will confirm the query does not contain any errors and can be executed against a database. 
         -  If the query is successfully validated, show the query to the user.
@@ -255,6 +260,9 @@ root_agent = Agent(
         ORDER BY
           impression_month;
         ```
+        
+        12. Use CTEs over Subqueries
+        - Common Table Expressions (CTEs) are to be preferred over subqueries for purposes of readability and validation.
         
         TERMINOLOGY GUIDANCE
         This is an explanation of common online marketing acronyms and other vocabulary that might provide useful when parsing user queries.
