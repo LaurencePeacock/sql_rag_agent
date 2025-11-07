@@ -1,5 +1,7 @@
 # SQL RAG Agent
 
+The SQL Retrieval-Augmented Generation (RAG) Agent is intended to solve the following problem:
+
 #### Scenario: 
 You have a large datalake with structured data but no consistency around table names, columns or what data is included across multiple databases
 #### Aim: 
@@ -11,6 +13,14 @@ A Retrieval-Augmented Generation (RAG) Agent that builds SQL queries based on re
 Implementation: An ADK agent is provided with tools to access a database containing schema context from which to generate queries. 
 
 ### To run the SQL RAG Agent:
+
+Use UV to create the virtual environment and install packages:
+
+(If you do not have UV installed, go here: https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
+)
+```shell
+  uv sync
+```
 
 1. Get a Gemini API Key from https://aistudio.google.com/api-keys
 
