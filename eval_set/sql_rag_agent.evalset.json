@@ -1,0 +1,1297 @@
+{
+  "eval_set_id": "sql_rag_agent",
+  "name": "sql_rag_agent",
+  "eval_cases": [
+    {
+      "eval_id": " highest_performing_campaigns_all_platforms_by_revenue_q2_bank_client",
+      "conversation": [
+        {
+          "invocation_id": "e-1918f590-b153-4c26-acc6-a2e1dd9654d0",
+          "user_content": {
+            "parts": [
+              {
+                "text": "What were the highest performing campaigns (top 30) across all platforms by revenue in Q2 this year? For bank_client"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "The query has been executed successfully. Here are the top performing campaigns by revenue for Q2 this year:\n\n1.  **A Bank - Mortgages - UK**: £64,050\n2.  **A Bank - Business Banking**: £46,700\n3.  **A Bank - Credit Cards - Prospecting**: £46,400\n4.  **A Bank - Conversions - Credit Cards**: £24,451.25\n5.  **A Bank - Savings - Brand**: £23,200\n6.  **A Bank - Lead Gen - Mortgages Q3**: £15,000\n7.  **A Bank - Lead Gen - Business Loans**: £6,600\n8.  **A Bank - Video Views - Brand Story**: £0\n9.  **A Bank - Brand Awareness - Savings**: £0\n10. **A Bank - Traffic - App Downloads**: £0",
+                "thought_signature": "Cp4CAdHtim8sAl38P9PR08hGc2ITOD-H_2wOaQ-RRV2m9Y2h4C8mCPtUq2KU21j6Iksw0IZoTJ3O-EMW8jPneCqOpu3eKHNeCysaSJyqFrNT6t_TKziQMsseewmkxsnLFOIaryAIqvsmHw-6JoWjpNwpI4souZX8MQH7nxt3G8n-XIDjksCOYRrL3owoJv16SY40yHaGS4hQilSNCjz_dTxVXk1yHOCFCJDfHcMM5bqaq3dG_FJkZFjeQm9fzDCy1JJ9QRMwtSFZQcMc4bHmGfeziFbQpg5BOpqR8F7TrdiP_ip0wiLl6ozIBI5EVWTNPZUxDoSznMxW8nBa7E46Vt5k_rLF6mm4vWrcZ4sgk8pBiIc_O2HNYEeWH9Vrvk09Ow=="
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-e35ef46a-fc74-49cf-aa7f-031420717481",
+                        "args": {
+                          "client_name": "bank_client"
+                        },
+                        "name": "get_context"
+                      },
+                      "thought_signature": "Cr0SAdHtim9VMgIy4rM84en4qYD8_CQ9JHbCJEwGyQiqBJ5Tsgl0LzcfC8B2UDIkFZxDzaitzROfiPgneQlqjBnpYWBS4klRxsuZMRMcaqb_wZ1pdjwjqSqgUr07UoEkROQGawAm2bRh-ejuFQ1mTWCNWgc3iLasnugkXhFTgykvrvA83R8i1l3y6oCVZPt2pKRcaHgpP-JcPUr03yWCfXt-6QZUH1lfwEXBnNcNBnsqzI1JgaQrmTeJLsdgX8OJCc3rcbZUMC5vgtpt1_QZaqTYoTI8SH29f3zu1Gv41hqxL97DlCwcKhprMzuZfclx6IbvBGaa_IUQmZQdiFwAs_gg-F3giwPNCc4wD90wTe_GV94atTf1jPZkGOfgs1MP536Ql2TELbRKjQt5TdNcb9mhYQCKkNsJJ-iwzO8axPT20QP59gKxrv4UMDsmai-BrzpjuVhUTXbs4FQ6P665i5wXdwIuxiJEBX4OL3-lTouheFHJuQt3w2MR7_UQVBd65v0ThqvS1PaVHuskOuqRGDoWe8eJjEI7CpaR9A-tP8ohnxYto9I4-u_zBPwCCUWupYxe1St6OvpAF3Wf_Oo1yikRV4gNneuevfrBK1EI7CnRaGaKuia_nzGvjRNkWhWrW6dPnqTk9DKiBFp5IaUA-iKacrkLN019ErJhWkvjVZjGylU-0zmaiTlJUPDpF32up8Q-zXQ54KRePiLDw-u4wMnD19Zzfb2sy6bplsdEVZ7pABQ9FVnRZopoMikD7jt-PIMjDCZAjFXBg-tbW3VHFcCkWnVu_B1mGGNgFYyWqqFQVPhPpQFtkWj-H0qFxv0ZlkY12Ntn2AtlhVMNAIoljwmWGs81PZna606zjvrZecsVpeFlSObD1p_y9jYnqlnbL4zsqX4QFmvU8zSbV8mMBbteUcRYtPoDP5g2EDC0JefVzbq4HmDQd4cWvXFkHKHwpewbk6WRW-OQBFG_b0UddI3KUqFyqY2rn3e5wE0sRDU8imVWwrYrBqX3KfUsw7lrRrEfkoFY32Uq3G400jMA4zevDOTzntCds8ylewP25MANC1C7yr5fnMrsrloYibCD28Crhf0gq9kED6ddHyH4i6NuyikHx3dysGLXY-SVDl4S-Ep6dzPhT06F2xWAo6qRZh0iWlWAH2tNK-Nkcs7jLCucVyoltJxElNUdVf1TFPs2lglztJQJD1LGur5KEU3rYF5vZZhDmuvszm_6Gt_kdFkRNbgXFA_3yPkNn_Qn6iZMPAVoVVL7vikXOslWhb6s9M0gyyPO6OqZILs3KF9DFXJBkbpcAJNTpBWpJRYfMgLxCkaMtTiTG4RGXXDrvf_1Wx_f_ajgBDkEMCEjq66Eg7B-7k8PUgX2HL2zTi94j7dazWeth0CmZXNvepDr9piznUpWAYgPWsWS63cDSlJ1SOGZ5YETXI1YwnQwDXiMZ-BzyiuOqEhQzjAzXRiWwCqjHcsfsHTdq6x5eS2YxePl8Yosh8eRReitxtrIzoQZXEfwuSgOOonREbpvcIOi7Q8ME-3IltPO32ASWD9WyMETh_pbC0zQx8WniLrCEtX_SGrO5qhsyjdI9d9mxmXNIOJAKnbIqh02BvDErcGRNibQw45E3XYyvNaqFygQPey9Yup-BN3Md2vrys5htacWZbNsJVaoV_mWQrb-gQuSrwJ2Kf1zxVTAUAvzya5LxeYjE-cOKFvg48f3qnDP2w84tqXFbQxF6VaAA8a60YMW-H-bhlJEXMiDitwCnYxr1xpDQesKtL3RRfdOeqHOdQCY9nDl_2-cosQ7qYep3U14tBs2XBdJ4_9kC6usLfZ5xqHAhbMu79QVxfJfQw0qhBjTGK058RAVWIMXny15A_vHuKGvbLKVlgi8JMpT5XacMsC-hLoVjS8DoI1TsmOSnhQM2DFj5a9xxPg-ycDFjgJE4kAVkPTPUajHubzvTsV5Gk04wGPkpKtoPn3m0Kwg1mQGSPWRmYJgugqDqm0RWEwn-UtbwWjCbHrrsoVHRH186bHieDU-4j0cHRQR7MnVtrh6lxNY7GhqjeOi-2hpHSVpzK5njX1E2LYB3f8kPgWfyyWD01dCZtySPqPOTLwV1sEC-o9LgykWBg8EgWong4oOD7HAiuy_vXJlJM5flxtCgj5x_KsJNFVKCqhLFl7RgrsQeVPVIqSOp41WC955nLeLCtwaiF0VjmRHULVtUtIPenaxYKG6txZ08MFO0LVb2LvknteFJBYGsZ66cOOLuUnHz2iJBJ-tQiWJf4Fd4dfuIV0K6Y2HLj84I7cA4I6zxP7guoub6WT4K4romeEJr8SDLaB5DhKMqjOpUSvelNCv58-kc6WICMX-idN9VQNgmFE06PxsU6_E3Rk2MrBsMHIlNWpG1OOxQ82sS1wfUh1qvDTtyZ07WfMHBTBH8RiCwDJjNpeHLjuG8oSNjOoK0tpxEZK-ZzHuc7baZ958WHD4SrI4keIammMf9pFNJzvPI0q_FE-j6-Jt4p2kgXi7BH09fKToXLeTpJgtLWoArLDFDz2jBMKD_nOQ_jo5YcQK-UcuZWivQuYxBEipoVOMavD2lCFJU14Cp_LD6RY3SAXJU0Gl54BxAjTFTSWKihjB4js2U3T2Ei28h-d6QH1UjquPwdv2qhmysGS2TwrlTAXOhwSRIIUa8hKgxR2xi3MxRZsbtBkbbFPtMboRdMc6jIyc7UZ18F1OHp-Be1M9OHNEuS2gDped5O4BH3XyKHPzGLnuG8Hb-rvHaMvJVR6-dwQvhEPZeigRUA7rEIw_0EPO0238GNPxIil6eshVbG2b9CD9i2rIoFiIY2QrHB5R91hCdu0UtdK9Pk12reyihRFsnsbIZhFWE1fxcO3pr93W4D2Yis8FJgDno-goO1myT8hVMcDmfXpVhCrASDfL8OntYHB7Rk4Fwo-0vkwsTw9oNomo4Qktkeryc0HHU2w9hcur0IcQwtpqLe4PW8L82G3NKjWLLvCBm4E0voP_2D6OOgyVXS2NBOXtwz6tCZYDajKYu1wjDG-tO1P8_7D6rJyvpkKRh4R0oj9eV_JChKHRl8eVdBQbVJAL21ogqsDGGoXJ4qbwnmEMQG-ensDz51LtfJiPOTsZx-iAwzgSREYN3UVeqmg_97O1FxoV8U5zNCwdoEugng=="
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-e35ef46a-fc74-49cf-aa7f-031420717481",
+                        "name": "get_context",
+                        "response": {
+                          "context": [
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Date",
+                              "DATE"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Campaign",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Ad_Group",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Keyword",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Spend",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Impressions",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Conversions",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "google_ads",
+                              "Revenue",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "platform",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "date",
+                              "DATE"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "campaign",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "campaign_group",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "campaign_objective",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "adset",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "ad",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "ad_placement",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "ad_category",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "ad_video_length",
+                              "VARCHAR(50)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "impressions",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "spend",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "landing_page_views",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "link_clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "video_views_to_3_seconds",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "video_plays",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "video_views_to_25_percent",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "video_views_to_50_percent",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "video_views_to_75_percent",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "video_views_to_100_percent",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "meta",
+                              "purchase_revenue",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "client",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "date",
+                              "DATE"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "campaign_release",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "research",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "creative",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "url",
+                              "TEXT"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "publication",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "sector",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "citation",
+                              "BOOLEAN"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "followed_link",
+                              "BOOLEAN"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "no_follow_link",
+                              "BOOLEAN"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "domain_authority",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "estimated_views",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "tier",
+                              "VARCHAR(50)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "syndicated",
+                              "BOOLEAN"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "brand",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "month",
+                              "INTEGER"
+                            ],
+                            [
+                              "bank_client",
+                              "pr_coverage_tracker",
+                              "week",
+                              "INTEGER"
+                            ]
+                          ],
+                          "client_week:": "Monday - Sunday",
+                          "calculated_fields": [
+                            [
+                              "google_ads",
+                              "metric",
+                              "COS",
+                              "sum(Spend) / sum(Revenue)"
+                            ],
+                            [
+                              "google_ads",
+                              "metric",
+                              "CTR",
+                              "sum(Clicks) / SUM(Impressions)"
+                            ],
+                            [
+                              "meta",
+                              "metric",
+                              "Impressions/Landing Page Views",
+                              "sum(impressions)/sum(landing_page_views)"
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-32cce141-3fc3-4120-99c8-6ee8d6e19bd3",
+                        "args": {},
+                        "name": "date_today"
+                      },
+                      "thought_signature": "CvILAdHtim8vYAfb-km_Sygo5hpEnd3RORpcexqwzaCFkCaoKQUgAdNTA3kUBnMyXnfeJw8nw1F3tHt7_zIjzym409updh7SPFTFGiuk3t4gdHeMmBlMgyXX0J9WPLRQ_2y_wBCSO7hnucFAQXtmnU4EUk4e75s1VisCS6acZWxnli5F6bxSX40oWu3yczPM84ipI6vFvr3AbjnqLx-TljO0e6S1ymf2utFgLQ8tSWYhnuFveexZ6KMmIqTyxdc8P_ZDI4YrPFe_prMoBky1h1MbwzaOgqRwJQ1l_LOxciv9hllS0fYh-kAdQ2voJm7So7QmXuqtFdrn_btXnpZoCwzwYicpvIQrL0vAr3A2VM4FX0Q3MgWlwWVodxpNbClXQ8lUUhvarVyytxvLflTzvrwHParfFbRYeqH5xB8MkMk49VxiU06U9XJCmnPIl71hLq6NF93ZE_eZtXhSQmkvNgH9CNQxHHbRemsHrTicUed0zhFunxq7SDy459Q8oWqQx0AUiDNkTZ5l08rJXt0EbGt5zi_p-KwLK0rdA32BYEn-22wF83AspEs6i93G745D4RweMzM2AhbJ8UdrBzyLRYHeyXtr2r_F-XzDAo7Iu--grVeiSxPnV0u6r3Zkwu84wvTKy0T0wvcMyCPr2f1Dr4hO6OtZiYDIN1VGP4yS0WQiDc9nJcnsBFG0Ny7vJin7VGwKKGGv-gTT5epLXFY_2EypkCQjFtbZle2hGm044c3Nwb8dA_w64ACGqCtlT6YJV2p85q6op8lcFNF0EQTZyOAiFbA_UMBx0iGF0a64yjGOxv03hAe99K2crJk4YsnsXg4sFIxPUkUPbjGBGF4p5CvGLU61av08vY_T0XTiouaZvQrQg4U-2Btwz0v_GgfHYW-eZzgmPmG88cA29xzKq_FBZ37ClTIOtwhM5r4vVXWP-VLpr_uy-x5EM3eUE3upGMgb0QhEl4saQazmtugGSXyATrF5whg-ng_D7ZUBVEa48rKbBEieSIZ7pXj8sxUlsj21KXB4thUdJCqhpwDk8ruNymsTFtQDJo6Vxx0fMfm4qaW-unYaiJFCKikqm6OfHJpBenMCJwpA8xj-EOjO8M5qMz2z5QDzc8ztmmDUk6D8EZZNi1-H-DxgnTeGhZ2kpZVYPedUjV-PXJw200xbOwJUJKKG44uaTnCJ0NgavOEcY4f5aqdzOVZRhmyRpnHLS59cqjtlfek009qGvTWY2scs0GSdx4fUCx1_0JyaodhNQTJaUF2iIGtTMe5AUTxkL-xOwF37jVXNglXG-rHhWh4CvH4V58qs72EDVrZCYNmTlaSKWix0uf-QPRsctO1T_eFOBR-5ttoZKrWr4e14AbOL3T680AbIwerC5EAxJbF0EK53f0u10tojZVck3MTi3SakCw_4MKa32uv_EK7IAr_y0YYcdDm6DoT2htNZoyXP9XTC9ev61r6zJyKzbabx4XSm246-L_IGIbCCvZlFQBuoQBs6UP2IArptNSgAor9iKDnk6KGUhkaUaXiNY4AnyY4I8npchnOYaKQId2IJTSX6mCPG7Vw_TRap4i2Plm_h8uCqlWPvbqnrF6_q7UOEQIGXQwt1bXdbdNET3KZVQICc9V5My6gY48qkw4nHO8e5zR-W6MlYhNwuj7y_yhVHPUc6m9db1qrGBQB-JjdYlZFlzDCe-Cw1A3ayCLhH6ilVuF4vgNQQ7SCEVd7ERdpnzpmVuySNc8f9Uy-EDe1wgRObL6XLf_Vk7JuDxxqD6Q3k-ZAODvb9yZlKmIf5jrV963543wwpxD0IGDzaRrm0K17LcFqTKcPRXpOKe5oSXGpYEOGXceVmZqgJ7Qi5Q3LxIvylOFhzkwOnVzTmW9G3KKla-u1JLO1OFu79unK5Ff1YQ22EUHz3-8Qpx4DePzSVOOmrYPSpBJKSnQrlhhi-XwLe-TOMLhNtYH0sJSD9BZ00fwiSQj0T2w1i52bmqgHQjgbuUR4eu206eLKhueF6iR2mJrilVn35JTE5OIdPwnfg7nkZLA=="
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-32cce141-3fc3-4120-99c8-6ee8d6e19bd3",
+                        "name": "date_today",
+                        "response": {
+                          "result": "2025-11-07"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-0cdbd24d-3de0-46a9-a39f-9800b169a2c8",
+                        "args": {
+                          "query": "WITH combined_campaign_data AS (\n    SELECT\n        \"Date\",\n        \"Campaign\",\n        \"Revenue\"\n    FROM\n        public.google_ads\n    UNION ALL\n    SELECT\n        \"date\" AS \"Date\",\n        \"campaign\" AS \"Campaign\",\n        \"purchase_revenue\" AS \"Revenue\"\n    FROM\n        public.meta\n)\nSELECT\n    \"Campaign\",\n    SUM(\"Revenue\") AS \"total_revenue\"\nFROM\n    combined_campaign_data\nWHERE\n    \"Date\" >= '2025-07-01' AND \"Date\" <= '2025-09-30'\nGROUP BY\n    \"Campaign\"\nORDER BY\n    \"total_revenue\" DESC\nLIMIT 30;"
+                        },
+                        "name": "query_is_valid_postgres"
+                      },
+                      "thought_signature": "Cu8JAdHtim_CGLK4FBwxPf7hJCDTfqhbXQzC7wgctnsUNBJSCXCIs367znChXw05OSY6w-soQlw2L3snly93Qdi4t3DKvo8DDOri8sbqnY3vNB_Tjt268CBnv0mU1gVtU5hAYeKAVD5pZkrCO590vp8494YpwHR49bp3J8UZAS8VAfuwXMPie6fIP3uEo-Eup3K23EZK0jhlggEJWCAyYHre9769lM6JS7eKx1Vi0R7Au3Ec8qjW1Q3wh1jf2RNc5z2ZSPqHYox2J-jSNIWsAzzr-3f5svEea16DxM7pJjybQ-bOTwKuI8XJPUCRagp1X32PfI7fOU7BQpoUtEQ3nxjT8mGHbkETY_QPUTSFM0bMSNd-70KtCElW5bq_d7CAxXOSvqg39wlCDS_9NbcQ_mZjWS_sZXU8zn_UhmBsCQjT3nQvfOHhnb4V7WsWIwkUYBHXtdfL5vy0rK9gjEbCVhuvhrMyHG7pVBeLhNlxruh4orHrj781A1O6clPeokDOdIDpo0shmx5EEamzGbVjo-fHQH-aJ43Rty3Tkt97FpWphwGM7f6wMQ2uDfBgN5AT8X-Tuj8Yvh9QC-TwaQc69HbkR2D_5YUQ7mGVjlszzujshqqkPs-wyFr8gHLl87jAAQo0R5nKwQh1ciYzBOrQ7zC8XqqMRTcnbhash8kLQDvkZsnSloXY-Cx-P-TthGv8rxOcG08HXopSHjIzf0ThcA8ghxKHshjWEPLT6ZWCAyDijIG4WMwM0BxKpRwmdXKpIySfyakTTu5Lg7VMROdWf_dlfOmwJp6j9Y7tth-GGqri_bjXDi5HlMsYKr_WUg0c94a6a5BGrx01A4gYMJDX8THJUcB4YrO7K-imTyoJQsas7NzDD_pvBE22wClt8x29_xjSxA_NXUo7NPdpGByTmkQ3GzuaUKLIwYNly__XDXyOoyicGTfVvvzYr3xTiZLkbcQsOTPvqiWhO7zHDQ-QkIkHMlWJju0XW8ALK07z37mRdBLsPjVf9587lENBI8YYLxG0YgxG_ohH3PzKNyfiI8MdFT_q-G6l7MhHnlYF09I5tvH6LrOLIPsPwm-NTtWpEcmiif4JurBsCuTGHutlzfymVXIa6lacnju_6OCHSn9SI7amC7mQAH2WQqqs9i1kHyVqS1TitRdClc5J1IRfwLDpo6FcxTCuJJxyiN6UCjsnzA071SkYVvtlQTLcH9MeTRKsoInJAWBH6ZLD1O67hOkTCaP7UDs10EMOdsaGnSCcbB6l6vscNBrcG204ugk58TOi4eHblNHHJMc4C8w70AjAH-d-DOKUZcnngGzHbUyomQaW2Tneg31pcloAET30be0bkurp5vOgYSOA6iVTYzGzCQngfneiE_ok_9Gpa2Gc2EYmUJghUOQ1K7l40kCDcv3kaPWcxuks53-0_FesAFOuPraHlfj_ysbRBK0K4qg1SR9QQswuh_NKWvrE7AfLO29DNbSNwAHYSVk6Ho_13ff-YpZ2fYH_mX_3FB3FH84icZGh1_zSk6h1S_hjP64asoyqVWIGjUtAj_ST9HgZJd0MScuoeli6VRaUgo-HMjPS30fdhVMPqMvnPCtdvD-5HYG4PNlUbP5Nuvdv-Xe1dpAoGyhaJxlVxYKorZeRzXjNeD-G50FauiQUXi4g8GZOfg9UF9dI86Tk4JMvxlTFsGN8CqkEAdHtim__kYNKa8dNf3khFvJK3CaqeA1H6oKz7pZGRRnVlhjPhdBdlBb0VwlV87yU3oJjTSF1teq9u2xLrONvdbsvQqRIliPm9LuY86QGoOkDAjUL53qLF43vZhSoNYVWER-6qG0ojE329_m8jsPE97xkoHBABmqJGWPgisEkIHqybkusQueQw-1bSCO2tf0zvP1-8xCaemTtOt4UwKw-9dGdNBd93_HXEiZRNIU7AziZuXbMRUx3J-sPLzp9OhahqdMFxHsKnC73eMXbBAHDfsm1lDZazd8FomeDJlETpkO_r_92rB6KuO17ZxYu9A2EIyJI6oN3olTKySmPHR1yBiqjc3sDRpghleJLX3HmqJvGMnXFM3Gi4ODihccFQtEa4w-sCKrzHZNPInyyzmFDXidu_GFjwLb7KKGBln2d04vnEWpNTz61PpVGvsPy7Q1F5KiAVz4kAtUspxms9lJwGSq7PGUJgT8ZqNZPtBN1H6NgfM5PI9eIJvurH3DFnlk4--pLkl0-gvTjF0sANw9fOjGiYYNwTIFZ0XtHHtykoE5WwagapozLxVe5eDq-X11yqylSRBU_M11WpNoMTC0mmVOVc3a8DgR5dI7WE5NJB9ixcaSCsxNWWbv0L0i7XRiI342dcGMVPjZAU0420v_XgS6UpXjf-FN1UDNupzx3XeiySPHSOW2LzJCL0ugv0NG9m3uNc4GrkVtUAn5KhMXUk96Cml4EXQfVoApCAdHtim-dG7s16YAjA-vakRX0IMR5zfmsCUF1o7TFvDE6DdXxxT3bHwgceyK9PlX-Q6nPkYgzeWBFk-0gbsQnJdna"
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-0cdbd24d-3de0-46a9-a39f-9800b169a2c8",
+                        "name": "query_is_valid_postgres",
+                        "response": {
+                          "result": true
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "I have constructed a query to find the top 30 performing campaigns by revenue for Q2 of this year. Here are the details of the query:\n\n**Context Details Used:**\n\n*   **Tables:** I have used two tables to get data from all platforms:\n    *   `public.google_ads`: For Google Ads campaign data.\n    *   `public.meta`: For Meta (Facebook, Instagram) campaign data.\n*   **Columns:**\n    *   From `public.google_ads`, I used `\"Date\"`, `\"Campaign\"`, and `\"Revenue\"`.\n    *   From `public.meta`, I used `\"date\"`, `\"campaign\"`, and `\"purchase_revenue\"`.\n    *   I have combined these using a `UNION ALL` to create a single view of all campaign data.\n\n**Date Range Calculation:**\n\n*   Today's date is November 7, 2025.\n*   The query is for Q2 of the current year. Based on the instruction that quarters start from April 1st, Q2 runs from July 1st to September 30th.\n*   Therefore, the date filter for the query is from **2025-07-01** to **2025-09-30**.\n\n**The Query:**\n\n",
+                      "thought_signature": "CrACAdHtim9nM8Ejp6-I5Ma3gySUcxWFEFytZ7LSBDLd-Uvu4BQ5ikrq8h2AQoWLv_K-lfRnag2roaqjadewUkj_IJA1kPDUghQo0MZD91pUqNMZgdtczulJPeXGwg7usS45E6NtrUPDHlT5hoIt00i8Tirg6ya8LRRK3qr-qi0Ww0LdanuwgVFFGEHUULZP5T5ykbIfWaY8A9-atx0Dsi5glt-9-CrD1USHH3sZryBdwxbEplV6eeaZli2FkI4fe40Bkys6rbtarSp4IVVXf9-D0ngb0dmGizroLn0rpOgn1_KXEzb1WHmqq5zp4OWt4_k7-IgxYs5qCOw7gN-wU010H-n_7qiHX5DCOX9uX2zlc_wAEyKKU920zryFLb34VV-gVvWc4ZQ2G2eZHIsjT0WiEw=="
+                    },
+                    {
+                      "text": "```sql\nWITH combined_campaign_data AS (\n    SELECT\n        \"Date\",\n        \"Campaign\",\n        \"Revenue\"\n    FROM\n        public.google_ads\n    UNION ALL\n    SELECT\n        \"date\" AS \"Date\",\n        \"campaign\" AS \"Campaign\",\n        \"purchase_revenue\" AS \"Revenue\"\n    FROM\n        public.meta\n)\nSELECT\n    \"Campaign\",\n    SUM(\"Revenue\") AS \"total_revenue\"\nFROM\n    combined_campaign_data\nWHERE\n    \"Date\" >= '2025-07-01' AND \"Date\" <= '2025-09-30'\nGROUP BY\n    \"Campaign\"\nORDER BY\n    \"total_revenue\" DESC\nLIMIT 30;\n```"
+                    },
+                    {
+                      "text": "\n\nI will now execute this query to get the results for you."
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-0f10b47b-758e-4a5d-b9d0-ee6368f97199",
+                        "args": {
+                          "request": "{\n    \"client_database\": \"bank_client\",\n    \"query\": \"WITH combined_campaign_data AS (\\n    SELECT\\n        \\\"Date\\\",\\n        \\\"Campaign\\\",\\n        \\\"Revenue\\\"\\n    FROM\\n        public.google_ads\\n    UNION ALL\\n    SELECT\\n        \\\"date\\\" AS \\\"Date\\\",\\n        \\\"campaign\\\" AS \\\"Campaign\\\",\\n        \\\"purchase_revenue\\\" AS \\\"Revenue\\\"\\n    FROM\\n        public.meta\\n)\\nSELECT\\n    \\\"Campaign\\\",\\n    SUM(\\\"Revenue\\\") AS \\\"total_revenue\\\"\\nFROM\\n    combined_campaign_data\\nWHERE\\n    \\\"Date\\\" >= '2025-07-01' AND \\\"Date\\\" <= '2025-09-30'\\nGROUP BY\\n    \\\"Campaign\\\"\\nORDER BY\\n    \\\"total_revenue\\\" DESC\\nLIMIT 30;\"\n}"
+                        },
+                        "name": "query_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-0f10b47b-758e-4a5d-b9d0-ee6368f97199",
+                        "name": "query_agent",
+                        "response": {
+                          "query": "WITH combined_campaign_data AS (\n    SELECT\n        \"Date\",\n        \"Campaign\",\n        \"Revenue\"\n    FROM\n        public.google_ads\n    UNION ALL\n    SELECT\n        \"date\" AS \"Date\",\n        \"campaign\" AS \"Campaign\",\n        \"purchase_revenue\" AS \"Revenue\"\n    FROM\n        public.meta\n)\nSELECT\n    \"Campaign\",\n    SUM(\"Revenue\") AS \"total_revenue\"\nFROM\n    combined_campaign_data\nWHERE\n    \"Date\" >= '2025-07-01' AND \"Date\" <= '2025-09-30'\nGROUP BY\n    \"Campaign\"\nORDER BY\n    \"total_revenue\" DESC\nLIMIT 30;",
+                          "results": [
+                            [
+                              "A Bank - Mortgages - UK",
+                              64050
+                            ],
+                            [
+                              "A Bank - Business Banking",
+                              46700
+                            ],
+                            [
+                              "A Bank - Credit Cards - Prospecting",
+                              46400
+                            ],
+                            [
+                              "A Bank - Conversions - Credit Cards",
+                              24451.25
+                            ],
+                            [
+                              "A Bank - Savings - Brand",
+                              23200
+                            ],
+                            [
+                              "A Bank - Lead Gen - Mortgages Q3",
+                              15000
+                            ],
+                            [
+                              "A Bank - Lead Gen - Business Loans",
+                              6600
+                            ],
+                            [
+                              "A Bank - Video Views - Brand Story",
+                              0
+                            ],
+                            [
+                              "A Bank - Brand Awareness - Savings",
+                              0
+                            ],
+                            [
+                              "A Bank - Traffic - App Downloads",
+                              0
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1762509982.722431
+        }
+      ],
+      "session_input": {
+        "app_name": "agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1762510162.329437
+    },
+    {
+      "eval_id": "top_campaigns_by_roas_insurance",
+      "conversation": [
+        {
+          "invocation_id": "e-12ff0883-6f89-4f75-b5a6-9f96106c72ff",
+          "user_content": {
+            "parts": [
+              {
+                "text": "For insurance client between Aug and November, what was the best performing campaign across all advertising platforms. Rank by ROAS"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "For the date range of 'Aug and November', could you please confirm which year you would like me to search for?\n\nAlso, could you let me know how many of the top campaigns you would like to see? For example, the top 5, 10 or all of them?",
+                "thought_signature": "CoQUAdHtim8pRm9jCtnC9qZymXwQVcL_AMLle8l-fYo1wPQjTFWE2xynebJq7CqedUMxrbBOm2kyOLFYRzZUQ_sAzw00zEvCQHVvIhOOH0iiNRKPrlSTqCdx4olVOVuoyCw-WWogEi6hRjjc7maQvV_ba2jC4qoDpd1TKTlAiyDGcn2fee62LrqIsUOFPnlvyScf_QQA8ZadQpycPyj1S6V2HGPP6nZasEeXpw2GX_gi1VBNtu1vYwNsfeHNokDCIGYIUvq3GuZcjb4gNf4xlYRNhH_D8DHmkpfpSFtJGyXY4HGgPRuBDwGsPu8rxlkRnxagUGw0V0odMLXKZRkSURwdi7Z8r2BrueCTSFVdgGghWxfQaPNGdSmbdMLDP5jJxjFVLgnijtzu2xP8xeZhgQ8QCUfjGhFruhRCFgAzAjR6jBbKLHPCuYl0XEds2JcHKYpraNrRdK-VB3gncLkFJE365NZ-JwarkPsV0WEaWqQ8vdLHShu-1PK_z9YpVKaJUMTvWHVzuUt5HUDU5K31iAOyI9D5XgCIx0zFbANtHvAQEFInCb65OmEaH2XjF4-5moedmES7JndxJjjDd2EFKR1s5R6zLNEp2HRHy6kvt9Se6HugmN3LmpGnk_W4nsLr9SRQRCOZqQkP-sUbv49uEPicFOKdovIjKcOjP2QMGojdyHXweiZAbNQKWsM03G9_kcbSVHVQ72NDmwAZDDHrsO-8cThpCl-wF8mEuntLctOIkevKLvVGudHnd1NL2k6APZGyA5Q8uUhAXHiohT4gUpwiEabL3y-EtrjKGF3OHbKVkN5qp0h8icPeyCkKKWje8CKDnQGWuAz2kyuDp5NEJ9RrKJU8yj5lr4Jaj8A46NauIEnR3BPX3_YqlU7CwOoKkycuAN1gGQGvfRPk4BsBIU2EKI_oHT6qo4iZwm1lm0VNxJ5SE7kLCsEsGjYPKIogyVyQk_zSEwO_FrkP0a_35YECwGJyY2rxVi4f_XzHNeOCMSKv9KSX3chrLiE0KHOJANhv-Rslmiw55TNN1YI0lBtolzHE0djBdNDTOHya77eK7f9keM_BajIruiuMI-ifP4XvhCx5kYxhWsHy_BKprxgzZRm_fUwJflYXjss_bne5zeOAH11QF_1qYxcAUPcZtCqeMp2jnae2vKUNeYNiVaw25ils45TIdMdDl6LiPQdPCkauIap3D5TiiOweQrUW69FwuuIlcVL_TiQYfxK4Vc__QdEzgdEpeqPB6IGzpO8j00AqS59qGw76WgZFaQmXaKRKCdJ_kxpzMPfYeXrue7Z2Ou0jNYepbyHKgRwhnExEPOqa0SpjM7mTOBzWKjRW8eBneJ_CA7UsnFjtMd4vmtKSk6HJbLCoqyrmpxvccOydpZ5pbRXtuyOC_mJ8NK1ty_SiNL6nUUWzwA-zeCiki-kmezFEKRO7P-AIgMUxTodaRnj8kd76fcLuzY768Z441PHW37DcrpKx8xfsy15svac3GgiXVSBdyeF7uKB_AllF9Zs16mrSPLlLFWmKsmeby5pECtd2PFI2vuidBaXXcZ7-Ztc57VVn9vO17wVl6WWzc6E6zMYhuRsmmFBkX7mbOpJwzNL3nQFCeyJPCmtsIdz3T8qyJzvCBv0D6DXqPysxagLfpgicIj5ZnwVDC4m7-W124aJm2f_AgCjTcWFe5oaxS3CLnQ-uegQIxx4V75bhyVY9Ttsik1_wWcxnvDmB1LBPE8AHnYhDGxrE3i50Uq3cOdIjtlpnC9DQ-bQdPyzjK8k-gqgd0wR64qZcGN-YIseMgNKubbqCX6ErwHgsbD4Ai_qlCMx9T89WKpfov0RJxlE2JHfz4EWeovPwjGP78KHtt6AgJjxUD_9cHCvACVYEcB2BJQu1eNDak0RXtvEKP9tBJxcVhqVj0mx9rUA9GzeOYecdX_sTH0pXmoxKlEFqr4frm8wt5wgQ5sOplWBWgd8fPhXjucwzY3_LOZ-aytQytg2YHfEx8JTuy74FNc5pD5haQHAUYvbSWPz1dGMR1W_etCQWBj01Qwd2pz4TVrwZBvCxfLj8PvwUE9hACyfOAiwYz39VW5LlhG1bOJufXnXW4cKnAohceHI3C5PYka3ogqxoZPKQDEExbNhnhy__e1sUs1utnXvSKME_EHUDmYtugjF94uNRqyeJd5yRVfS5bgEMU_5GHHYccEctlUyX9ESc0RtyGHhLtRU_N2nE_A1FccrWvjKvhIhsC-btb-4IHTj3yFI9e4Eop4pnwzsQvPBFGkg8W6RXgQMoV133kr-gJJMMopC8Ng5JXzn7oA8-db4KNGGwj3uNvRGbQH6NZKzmKVDbfkGnRleut7SBc79QAgClIs-LWObwfVAjI1udEJoHLL1waWyqZ4NPH8IEpa2_BkShn-qhEolDA_On2GXSjWnXkqbQSBLy6XfhlT6Rq4gmA2bnCHt9QSev6drAL7kdByPy02FT4mlhjKFOLWVQ-vVLXNBUC12KUQLLf8YyoTBOLcGnItjpH5hM2m8kGooo-VfXi8ijLkKP-Nzvrl4_mlh025patR4hXK46b3Y02lEu1U9L2ts36jSVx2gQCfW_QsNK8bQL2yv8l_qvTwkos6whEQoouXff3VV9XUZmT9vYiiB9ameuV_EMs1r33RnEHyWzw0pwCeHJNwLVdtOQDAgTlr1PSmhpB1laKPkPR-6-2w6_l9O47Qa2YZugUmHyDOtz-xk__eG9Rs2o2YLYioNa9IUCTCpzmr-REWopy2EftRC6-vdXr7RxVNIg3th1Qbi9VFQqTgVVmRNaoAW_LUKRnMPR_HkhVDs-UZabnnNK1Ke01txC-p9HTxXmWbQrpnY0qzBW74WExkfLleOyVyjeh9mW8RgoMTbZStSVgbuiUzsiXjPNRBSKHl7rzpejnLnwGT34nPuDaQNVTl1nk1TsxiWWZragUhb7ciL4qafvWq4mvlQRbP_ClQR17aFvxc052kSsdfcItgLfn4pTsgJ8E5DMmM_HRDo_kmKq5Axyn2HGZc5oATTXDnHnvt_2f5l1Rq9fEaQinE5p7FnHD1D88z6T4XfUXCYBWPfQZmoBNHrjzxrabg6Tn9VhSnD0g67xCUPSxXTQCTVRNIO4OLrvZV_6FKt7rFeGbW9iyEJm8pMSfjF6TEM_v2b7-kdaq_QU0gtk7eje8MHA-3FmDo5kLzQ-ey07cul7vVo_bysjT2DFpfT74JH6NOSuFSv7BtB4Q29Mi_G2VnrABc463YguA1nT6ci56CUTUtp69gKu5s4F3tT4FTbMMgMG9RaM0jLA28fOK6e82KG-GjBHK0OU-mHPAyErLPI4svSOrU3dx7klnn4VVdVx-PpV6Zixs8Yuf_nF5gqAFL3SOhlhY_4bNNucUHMdODK2wFUhHKCWtX_gDRwtL1jeIwU_g49d-NU="
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1762544611.835873
+        },
+        {
+          "invocation_id": "e-30284c4c-bc2d-490a-a257-7c79e1d4f172",
+          "user_content": {
+            "parts": [
+              {
+                "text": "refer to your instructions"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "The query has been successfully executed. Here are the top 10 best performing campaigns by ROAS between August and November 2025:\n\n| Campaign Name | ROAS |\n| :--- | :--- |\n| I4U - Multi-Car Discount - Brand | 4142.01 |\n| I4U - Van Insurance - Phrase | 2514.84 |\n| I4U - Business Insurance - General | 2222.22 |\n| I4U - Life Insurance - Term | 1993.77 |\n| I4U - Car Insurance - Exact | 1806.66 |\n| I4U - Landlord Insurance - Exact | 1732.60 |\n| I4U - Car Insurance - Competitor | 1660.65 |\n| I4U - Home & Contents - Broad | 1467.85 |\n| I4U - Travel Insurance - UK | 1296.11 |\n| Car Insurance - Prospecting | 1142.53 |",
+                "thought_signature": "CrkDAdHtim-JInVDBb58tuyZblqjOrjUfTp7uLFh_pP3WRJ81LnUHxSz27cAbp81Z8uM774OdeIT5L0F9BlimLiMyRjJlJvOQau9_J0pp-Tgyxru0a5J_0cFhv0aoK4g-i7Wmj3w7xmShvsJX1nPJL7OyXvgsmkOFhb_sHwwMnrKgHfadg2t648hVQTzKtMkBsFkn9yT5dTXmfQNK9alkZQVaMW5I-_Z2ldrotfs6ZhgApTAD65O1VeUCRyKtw8dJJ4nD_yNpmC-Nt4oxMz6ivDa0tIWryUjSGa4QFanpy_omwu9ljNqWcPiA1uAO6AhEMe-XTt_TxNrazrgrTOoUVocFJVDOVZDRGi3_wIu9Q5hjEAJVezJfoAITzzy6en8hSfg09E3E7RpsNkyuVyJpIwc-7FVVTxzUQ-jl-EZbo9_MyNNww60HRru0jtT4q2iKA6UAKO08zaPob_IueyzLyIU81sf-4n-mJc9mHFlVJHLqoMe3B8oVWs21TJRz1P4srWFKNj01L16pFcqfGjqVMlLBxnvpogrWD7UXYc_0Yie500KCBdIen6DPVVBOk2cfZASJL6t_YOvoIl2"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-d664f078-7ff4-42a7-8267-369792a141e0",
+                        "args": {},
+                        "name": "date_today"
+                      },
+                      "thought_signature": "CusgAdHtim9zXJJJpqjSlKcF_NMV7AgJlWe9LglV4QWzl3-HPphO6l7hxHb4zN1xRpT3dQkqCPPQTd7Gwkm3sdTNx1QeE0n9eMrS-8mjL0chBemjhk6e8P2q8KciRozEzoyDKU__rMqCv6p1fgTw91lmuwQii-Z485uidwENriVMuqTUXmBc_83yeeLLfP9YxWAbPvug_pHRGuliwCvIApLJOmoRZAFgW_84iVLfLzltjUrvf5gv9WF2YTfa4mrznRBm6-ZX4mfsOv6EQJeEUEVT9SmF9nP94K5zC_sE64L2NuGPszykHcFp-yM9ZLrN2g695T32UMNN3juTZmE2sVmTbdvPy7Ct0x0dBgsffKOr3QCzI9198MQ3t5QDaBROrjSonalOjtePOxPfksw9xcjciAiETq32BvXGe1S3f_SGgYSWaHfIFEF_Qe8uzLj5mFhdrxCCKwnXQYb4F4ySv8KlnJDYBZh0HnZNSlM8jz_JpW7eHnw9N46EmYj52wNYXETaYmO4_ap_n8OZpvNeVPARbA7wsAYZ9ONozPPz2OPs1EGqcM5_kfZfcN_D7ojUtiEZZu13aQzTIrYCwN00IZwi_6Vduy-U-SAQ7UPMC16rNZcoikQAlT_SNQs3ZcYZxN0WHzoG6JjZ3hYtS-kLJ2w_zBaqQwef2d-PUNzdn08th07DJz-wvsmkJGAnuvbAgR6U5g33tXoTX4pvbck-OpwF8JhlY0IbdlTVI9iSihXtObtg1rx_ejlhwM-7mE227m_EUwXCdEdgPZKtwOMp_CHAT56KeWvQ1-DmPT0O_rAeK3LqV2dHG_h3Qz5FuA5YUxHYqqRfdf2h1niibFlIZGi0JjAOy8MzYAjCwI6be1f2otLIZDNG2aEBxQEsz946nxAiVNWaVwRPaPH-KcxoSGM7XI08qzQLFckXb96O-33EcPpKzEBkuocovoIrUtQd1zxvFPDx5yi3Fcq-7s90hIghax1-xDG5ujkaTijJo3YBENUgKvxl5_0gzngYda9eTzf4a0N5Y1hgQvbeEfKMhX-u4Er12bYXWtOlmmKI4jsH8Wiq6sgXDE5_rfY_ycMlVFT9-8zt7TmCcEXY2CkwSNbAPrkR60slUXxpSoipBhxVc22fFqE7VEHtMftrZWG8qznoMQ6Xns_EYx63TTwdp_UaNroGucFqcYhRWpmU8F1Ho-Q4fCig_weKrH3NvK8IF_KPwqAql7QWcFyUHSw-ltUobQyi1bfVd8xEWmt9AYl3BUCwzcXxWeIz8ahD8sMjwGomJyJGCAKJ2nvyJncIsNcXw0t8rvrZRbYnei3vnrax2QxEXcff1eU6vyOhqcTOUVLdAHOejZsMIuQ0XijPbg9STVHuzM1PkYc81NqRKLbSKq1bIgBHKXwS0iWZukn2MFlOTMpeyr02TuTTqt7XNnkm0sopfHxovAS6CTUSRYZkrstAh3MjS3LypE7losxfFNNLkvWX11dqLv_BPMNFFiw5-M03omJc8fprGIVggWAcPoWfMzWMNQSvYhlLvzGd43PxR14PJzEQ4oWDrFxLg3iS9zkApKmIFaLAK117KElBv1NKnwWwA6lNSJBBdiQyPIuDI1b0YxwdxE0hAJGjO3reZGu2iYhhUg23Vu4okuI1KdeoOeeHksk126BxgDZPLJ8k_cClLr_FfETO2gV4ohuTMO37Fc5hY_8zrrpcmd95gudPci3Ayr3i4mtNCyNuffoCofhPp1Svg1NBlirKkBxTFjTze4VQsH-0MBEeSPL6d_vQn5fXEb0Yf7m7saShvHEXJuFHBskhWCnQSNqPRt2TatGGT-lIF8kWILjLG2GazP5bJqMf7dm1exWh1ZHrFx1ZhwSsHYyIQho3n9myXlORTeSY_UJGM6y9wzJsDlctfVzhZvwdNPdhz18hGg24nazGkH6gvaab9Ld-BMbfwXHAizj3JWLaZ_vj2wxgMU3NS7z_gBALCPEF91xABVbw1cXiyGMAIvfEcoCVCSHb31uuG4HmlKyTytONM2GP-i8NmfK8A72lCa8-_x-GjxgCTF1PywqYrOpBGXjcDj4ZLLcxrfSskrF1FvbTGAn-MKdCfuDWC9ZJjpVfRqc-vZhlUBDXo8n8IKY-oHaxgQWqMAzeqvE_j2UTiojoHSVBEDoAyaLTVf9JT-nsJ60wQ7MvpA_vIQOFLihw7qgl68ptUB_1aJuYv9k4yOSUdtOdgs4UWbHpWjpNRK0gcoIihW_V8PZmIJpSGrlvpSd_9UEAZa6ENXRVrttkMxE5WMAVwaDuM5k7SqssLtL2RCe7Z26beG7aOi79td_VdUF-7K32rZgeGuWUFGtwLEFrs24rHXE32eL3ZsZWmCO-0KUGOcp5wjyjwtFyaML5yQAw2JR7ffHnjbnZtccMi9SPQJ0XF4psV6oNnVhazqK_NkkBqMHIt7ZURTYPx7r-eJ93SXJhhkq85lzlvV2Iu3XFlIKbklpH5jqC0nGc8Aqnvc849wNxakII8IVMWen9r5XZNO-Hg6_LKox0c-K-I0VbqN2KjwNLz3PvdbdRIWvCea3o75oLdnFHg_q1iqkOL3Mk9cRXDNoJMo8H-C-PAImVqy_BvoCUpeFL4_G8rpHIHIxJDeyraiGA-m4xhHALBHOXmCTaOlg7Ta-KGaWNEgAfaJjg6RDEK4xe1LRk_xxFs0Im9yR3slWbusvmOX10mCucfqeXQYpGYHM_4wO1Kia2aEszHPw7q9Y-7PZvdc_mVUBDOepUDJ82_SY9-FmsbydaMzG9_SN5YKsLruBuyBOOqrUpF9voFolIYXrbg04TTpRBqBygw4B8x94z5PoL6wD6xbWkdHV5NCHUPtEqVfon-4nEvd_v4-ASdBj3kRaXeOd3ksb12dW61Is6tB0g9VTEKX3Send2ycUPuXye2JxdUde9rp4Dn49HCGHVtSFF7SYzMJXd66LKVGR3he_17ErW3kHKN3KrvjMGs-bSTgBHJPLbozxC9G9uiU7lMqYRq2YdAGaeLpdWfeyaHUL0kV7LLr0UDUgPAw6nIQv5P66Ykz2djg6sVbPm_lRirqg-3nvUvLRshDjH6IRPwuj4nyXq1ITGFMv24mJlE9ucHgwsW7T-B5nhx9G7UHyc5_Pohxc1-5dvAdurThibVCRYpbOjfriOhOndaFIKHWAKsiV0p37tYMsvB5SRqgT27U-PXSEZ6yOkKSNiECRPrDElvhrUaSS5Gp_PwBJOhuA4YTTxfdc9VvBL1kQ34heOT1hQDVAYGSVic7tDnN1wv-TUFjHsnLade4TPJQm-ahfAOKmHykYFkVggSa_OVQSF1SpbRhKzguiIhsOj-h3pL_Cu4rvE_4DkDCYdhIdAMSTPkwpZ2Omxtj2ZhoaTl62mfHYxPjteoCmYWh1V1RU3hdSGEAY5GrnPmmE7oUWU3BWs1crVDEViukJa6p97_ObBhWXP4RCx9hs0xYX5rNwitnUhodIofC-PsofJpUKvJKIJLW_asUHUbl_datzpo9jMxu1oKSB2rAA582Uzlrrh6JVQ9r4CuYHmjBjMmndanC0Ug7cK9vvcL0PQEXwtEpoYtxX1nwM4X_ttt6qnDwr6_pkNT8X4VsQHzhT3H9XizRPashFH_Iu2oPZuEffqGTZmz9U5ertSGO73_oCxHn_q43trJ_X16QhpzbByZnLdh0HqVZjt15YM8rL7aCCl6Ivanhzd_GqHAisDJvjeXOfeJbDJOu2s2kTlqZLL9czmO7wBLEIHDlaFZHxjiarD17eb1cDOKOLHBD25dcQ2YTIFzU_p6i4FTX6umPnedCMM0-6zi_TOqI92n4KoxTiayljzr64JSUO-fuQwUJZl9XlLp6HEYXmp52ZGi4GYXudCuvCTRGKtW7-1PzPXKc0EJX6jnkbZc8Fk0TbSIWdrlMsF7pcgVZ2k9GlyKWIzFZCXtIV3V4UfCIyd7g5Sd09VhtKKNNOYYfG-lNE1mPrkuHxZczHlwvyY00tH3PS3ftIokSZvGVi02XXjThcZNQquLnoSW4qRgRo7B523_i74T4SxicX5rVUM-MGYxveyvYWDBB-KpMIk67AJaKwe3jxt6N-jNpAtxNRRaxX4moKtRkwKdGm6sFK9Cc8_eqZ1Ao2yjcFnSpmfmi0oEbDbBGaIcjWeIU3vN21nTVfPQO2ihgPiTFuRsm7BxbnjNlyMk0Ik0JhMHp99f9bRFHiod9L8-5B4I0qGA13ICNo43rNh4GBlfOzoUL-Kp9S-_y5n429R18C31SQETwoc46MnQbB3t5B7ft5jvqko2lq6Im-EeHA03ThkKha7HPPkKV4CzUhJK0Dt2Kxb1SK8mexPdqFiMJ8JEPba66vgAJIQfFoCXDGYmiAaROkk6aN6x7ylq5rqBChp7NpxLSEfIH7qJZRxt22aGI5bAD6G9JaZ4ifbAzH8sYHSt3cKEL1LEE2RYrT47w3iG81fSohjh5hehN11Y7y2w2dhqkDp40WAIhCjvXZYVwpolQwvbVQgaOkz2ruMdJqLRvwxIgMl96Dns8besvLfOnm_cCPHwYgjoWM3LZY1HzJni8BrajF6O814J7rfvNpjDLRigh6AsYXCoz6fD3V7aYF1ROSojtqemUdIyIwBWjlr6QDoWrxxHmAf0zxakVXbjJKVPY_yoUKFiH8HF0L9CBli6ARQYRyc4ElaGzEurX1t5NPrsI0qiIfjRmqNO-OKN_L3OhBiHTeO0ST1rcOCgrKN6aYid1d3PvDQpNRgjw1I_Cuufo7gfjeBhxMiVATmt-Ck5nLy_KZ2BFH_S01oTDp2NwmbfNVEqLbmZBKCIZiYpjnf4QEgc9UGX6SNNGq-L3Ud3ey1eu5ckICh5MIC3sJ9NwITb71PS1T6MFsYbiPkLIW4YgRtzynZreeVEENqsJUd0nEGayxND64SWX6MD_XGTClZlrgtMbFfVhmv4iqOmqhjuqtMZr0RmGzeJheMTcJbeQtFHZaHkAvTbygJjGsyo4IOOjsvkIPs-0k8kQVJNxvJFfslll8YKgGEGBls8BXoEAYRuKFFwyTEZI3KTG0mn6npep--DhESTWKCBz_giqVcKrS1de33jo2o7U-nswY4uwsrrI0JFA4pp2ERsQGdWt0KfiIY0eBW8XlTT_JbPepWmW5_PX0o_q5wfLFuB0tkUNwsyL7vZMhRDgWeuTd2j6tQqSElKTrSsD2OOMOahLHFrl6cy9x6kDHAJ0aTFe1ocLtx6lLDQgScmRIP-LgsxJc4bvwuclzdwHFPfexyT8hguWMc_-rFple-yWNxL6JaD4kaBWejZIsCuzRu7fCSukouVKmq_w1glwTACy4PSd1fbPqUvgbNnocRXcl7YLQ1nTa6YC0Ru-TW1Uf2TjdgFKsIFNIzjT7RPYtbpd2I6bTj69aMK3HoM1V6NYZcTWJZ4Nik3YoYLTAkCIYqeH4kabP35ApkdPJJWYfZs0G8dWIYqxa_uLhoCXBIfxdvBXyS78eBb4KFE8NJSAQni7CKHR_axM4e6kfxX9IxDReS_Zwk8rLo3WaNsNI5y2ybzQ2WNUWdB7yzk44NW4xVuSTie1hn8OpBNJ88TXLy7gTMH_eBGLvPGYZt7SW_hCs8qSDNDoecCtMCAdHtim84NRwHUtxfKGaBVxNAx-jjiG84UsKamZ-G1lmowCvnAtNy_-t59Hb7DHd6q1EoX0E70wPRy9rK8dLtfjvuREuw7Ar0eU-jVFrYNY9noI_hF9Qt1EAaT8dsgM-_N2z7Xqa-3S-5q1QeDLzSpn_SpavxjDq7CQ0wwtUOrXuK6hF0ysr6GpFrLEo2HpHQmXGmifXqDBOaTT_mcwR_EX9kT0VQYOEvdafHp13MGvv_OCqv2BmbeiHaEMN_kpfvi0xvVSW8sz1lLIvBBLsfsLc0GYQ0YFp_K7Fq9etEiFk_M86qDgBiYzmP3iFtjd_6ddyegc5wQ9HnEnPEzP-sF_LA7zRYQBpRbjyxUN6YTj6yrXwgP2RuZtH86FUpVWLjRA0gZQ9YSIUIj1N4qnnf5KOl7sumlw-QGR15DT6hqId7EScdR_0xyKEvBJDDVlb4rHbACqgDAdHtim-Bbz33He4u7ZoVUXl38zMs5RF3jZa4H41-eAGuNugRx5FBCoUgNByre6uBmQ9t_-IGxDVqGVIw9GOFUxYXE-8GWX5bmgWb2W-WalStpMgIBCQOLosLTAqniyWK6K5AQhxp1PrnDMN79iIoUShLPZePW0CPdsOC66KEGpFngE4pXLKU89Gs19aGtRaXiT0Utf3varLTbM94hhTz7VDqkTEIs1Fgim0Kh2YKk3nYzHZ_2MjFh0MAUDe7G07zt0wk9TF5SaKIk-HFP3WUPQislXdhAJBOju7cligpSSCjhYUcfv7P-jkttzQ8R8LNJ5-Bc4UV8vzn4TFMmg8MogvhFgLIY9C6ZVBV8byuH1mMyQZ5wYxbHcdDdpdH3uzR5QYA1RQ71hT2IFUkBlVPbXitQyauo_J5felsFNVhrpV76kRBrraUi1Th7Q0RfOfUJUPKfD3O8nb-k-vum0SIc-4U6TBe80FUNBjyQvZiOwUymsWbuEJRYmCi_j-DfAac9RRgcU9JJ29nGmnxIs0n5UHcyhzpakgEaIYfAOBh6PoZ-teQHXctcA=="
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-61613a33-90cf-4196-8889-9b64b5c515c4",
+                        "args": {
+                          "client_name": "insurance_client"
+                        },
+                        "name": "get_context"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-d664f078-7ff4-42a7-8267-369792a141e0",
+                        "name": "date_today",
+                        "response": {
+                          "result": "2025-11-07"
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "adk-61613a33-90cf-4196-8889-9b64b5c515c4",
+                        "name": "get_context",
+                        "response": {
+                          "context": [
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "date",
+                              "DATE"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "campaign_group",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "adset",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "ad_budget",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "impressions",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "orders",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "gross_revenue",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "timeperiod",
+                              "DATE"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "campaignid",
+                              "BIGINT"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "campaignname",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "spend",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "impressions",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "conversions",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "revenue",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "date_added",
+                              "TIMESTAMP WITH TIME ZONE"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "profile",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "date",
+                              "DATE"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "keyword",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "website",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "url",
+                              "TEXT"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "position",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "average_monthly_searches",
+                              "INTEGER"
+                            ]
+                          ],
+                          "client_week:": "Sunday - Saturday",
+                          "calculated_fields": [
+                            [
+                              "google_ads_meta_blend",
+                              "metric",
+                              "Click Through Rate",
+                              "sum(clicks)/sum(impressions)"
+                            ],
+                            [
+                              "google_ads_meta_blend",
+                              "metric",
+                              "Return on Ad Spend",
+                              "sum(gross_revenue)/sum(ad_budget)"
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "I will provide a query that returns the top 10 best performing campaigns, ranked by ROAS, between August and November of the current year (2025).\n\nI have used the following context to construct the query:\n\n*   **Databases**: `insurance_client`\n*   **Tables**: `public.google_ads_meta_blend`, `public.bing_ads`\n*   **Columns**:\n    *   From `public.google_ads_meta_blend`: \"campaign_group\", \"ad_budget\", \"gross_revenue\", \"date\"\n    *   From `public.bing_ads`: \"campaignname\", \"spend\", \"revenue\", \"timeperiod\"\n*   **Calculated Field**: \"Return on Ad Spend\" with the formula `sum(gross_revenue)/sum(ad_budget)`. I have adapted this logic for both Google and Bing ads data.\n\nToday's date is 2025-11-07. The date filter for your query is for the period between 2025-08-01 and 2025-11-30.\n\nHere is the POSTGRESQL query I have constructed:\n\n",
+                      "thought_signature": "CocUAdHtim8ca4ys_qx-aXY368q6nvnxOW8IRCwlhv9yBmRRgRUT8q4yPsiHGpiloi5Ue2ZfdM1_zz1FG09YQ9o3xk5X8tnXVgKFzToQPh3ok3vLhelWtVKtx1Xj2xSE-cI8xtPRO6XU4iiHRAE--jv-IC2wNK3-06kHeCeNe67aL6BgS0cDIC_Nbqq9zN6GtXy6LTTcCpsrqakfB5UnKV5KT6gZsPquh0GxifWsQQJl9fqiGBiJjlJS7c7XBzH3g_nlrRLnlaA2mBLB80TjWfC1uMhPMysFMYNiehsoyRtXHKaL-tC_QqE53ApONHJX5USF5btFTmkpo0ALw9L6PZFLMReB_CSc_GJPKS-8cC-kaGClZHJMs4HLyxTp0wazZlrGx9CiHbYXorwsbOlrtaYOM7p5Wayu5Xcjdb2WiUcCw3WFQxedER5WignYK3N-JwY6vnZqwPkpzvUV-4BS2qDWubiAqx1S9bzpVZvDMhRIhuHzcR1TXPsjN6I7Uu-IQE73ErW1qwILdGY3DkBBv4iWZWmke6UZ11xIFm1Ylr08Tvwq6zgHUtRkX6t9VrVZwK7OZmuaFjDkoM9XvLUPtvGwT3tPGUKeus0NCIKH8oJxqdtLl28hnGeAeTbIcVArl2nLJdVvLytoDwMhls5mpycsr2wtm1SuCvSHo3_IYrNFeQ8pU4NS4Nw2mk_mWMTGN8Uvb1nU35a64zUJug8DacFvGqm1SAM3agbw5KrBpacIDLgJ6pV2shXtOKzTwZ8mzDgoPXYyZfPHLtVkQKMZ1hWVpQxUolbIFau9hZicrVFRTrGXsiLCAU_-JZlboLel05Wrs5e0Xbmo2tSUtco4vRreJjFMeqZnBVaeRkpaeCkwqnMZ4-DcE7LyKDME8bUFBmG_hPeUbZLgYSDjiOA3fDhBDRg9IMOrlirDN81TA9xs4-vZdkMXlHxDI8Y6Bc5EMVxOqZoCRb0iJ37J2SE5zsJeSBfmuTDtnD1rJzs60oPTDjIsLwW_ghgJ2Yxsm1yK40Cw_5UkDQdtUb5ZfOp4a2h150dflpcQrMmh2G1QeaIyMwgvb16WI0BtzH2K82QlCE4N9GssE15TV6vYeS9MfhkIF9c4VwmTjvMYeUkQ4L8Eukk_6LcqK_BfxqjH846s6bpquHQwBb0QKpUkDPVxoQK2jMgSgiqVhTl4lJiouAdrqbFrHXL_vY_nSUJ7sCYY0kbsErsm3cvq6l3CDrXfnCsydQ6_CB4mNmEDjiQnt8xWA18cIkJHpYB_vO1kJiuf2H4viuHU-Qv_0Fe-PjDYlO_cRwGP1ZfAUlAR_ubfAwneuunlSPWQaSuEiarcMLi-1qBjoJyXH3px-_gzxMDdz7yE3ESGBrJL26iGYLpBt0a3OznFZ8w4Cq7hkaHEs85WKiDUDBBK4bvgCxEIdMpe0csQfFer20Y09VZQu5vXU91Pwo5i5RMwmfu1842eBjXaARNw_QfxYYiXnH5CQyMn7RO6ZJG_rMPo9pXvxlVvs0SjzV3NP5bjq1jl9r-I55EZVWahlpjFVH8s9YtJDoCLovJwaGbJyvW6ztcsbAg5AsAKGk9PEgZb08I2BYESUN5Zp1uijp2KQmciY2U20-K9DA6O_WKYFdmmrlKZd0AIZIJv-gpie1IElSTkE99Wpdt0PVee8uNnqmCqIAzFezC-KbOJsBQqFC9igCUpz5IIzDxHm1F_8hHsWX6eo_XX4prOqGRl63Cl_2-dcLSCF8iLh5igBbg_J8N_AvsLxvlxCbxPp7jJbYwfVE6qHTxiJhGKiSD3dDgOfcrsiD2ExuQ3-X6C0r-xB4RQx_Xnu-BGqKa0ehZVhGXw2crHt9LpLs4IISNaZc5qPsMg6tLJvEQSXNr5uygjBnQ0u5UR5SIGeBoFk_CVs4WRXqE2itm92TUo22-EKQgbBgd0an15DuX0lV-yzw_tyWZm6lERzVgbbasLs8VpYkRuXg7VkvGPHqFyztGa83FKoef7B1yvnU3Q7Ap1DBKg5LoB5GDEtKMT-oWEU_iV8YS8CBwERHe_XI0S2idH1IIwCr0nsRQbWwNzkv-F7LPjv57POT6as8RkSB1OmmjuJW7Dk0ETP5Btrey4_Qgn928Io2uMn4LKUlxLvempXkOFQS1JyIeJTisJXuPXSmv4ZzHVPYsWzUYaLB6BFUwLsmiom0n7XMiC5IMTNNtt5Yf1qzQ4CdXsEN1EGkkDxVl-hoYyjH_KeKVJsQdcghdcx8AJzGFm05EdOdEJ7EWxKBli7j4_4p0VYsm8dPGZl2H5wyPWiZSGwHcsT5UacLkZmUL9SJvHo0Vh0yO81aQjQJoUtaooYR7DeATamxAPLGwyPzhsYwLIxJ2CEngFV-FgPv6uV0v7ftVzNckMMcqsRmG-PV4wEWGbB-LETrr_S5IHQHHLV6u79Kb0Dl7ga_fWYydS2171hlueND0y20wwA80rIyxSqqBoaie2OwrGkSVvyMB7jjQ6wGlH3ON8VJSe-76aRqHCGFjRSpWTYLIaTolMNMlzj-tVXDiVbWBS73sUDMzjQXWU73xIK3WZ5HaIlBP9OpliUqRNXuyf-B_NxPHEHK7jC9ifNxLgvFJuSHDakGEM1Q0D-t2k6osjaHzT0XrMOhOjtDCU1QtwdjncPk02ST2rGSlDhcfNAkGDSJumQe7ARVbvBY_7fwdZvoYdXD2HqX2zkasHWV9CSxcBdxWu-G2LS_HArHJocmnfIZKZh_HyNbhqcJEfnEckeo2-umpxn0rZJ-lBtbqx8JBUAQcCs5Ulr3M6_COF1jg-Mh2ga2E4Hx5I5qBOyiNu1oWlXLExkRZ-416Bp2sdCA8jfzA0pPbea3Oj5jOOGBKMoPQSu5Y-NpLvot3AKr5sEI-oCkDwqEnxqAZZhIEUOPlql2BKzfK8fY-CgT19mIAyPj-nqfE3NYI3zZ7PjrfMchdhQ2rMnXrQmZK5UheZ-ueKpyD65G9dM4kjcmPGHb_dcQRG-viD2GP4tkVMN-DL2V5UFjaUccRZirqaMoB-wjE6etYVSCuUNJjTvTfMDFIZ70c0GZtckRVBoMe2GdzCppKOcuJGCsXyvtjzmg9KJIvFJV_SR7ZqBTQT9Ndk3ntUrCT5Uoxfsi53Apc85V4eVV8eNeAjbKAZc_-GUxlROTJZRLnrVtsPiMR-iQDzgDz2auW9ivhMjRqBGwoYgjJeL2LKw0DVyIwN993za8mIqhrM3GD9BDKSltKTFPdpsXpv7Iglmu9cI_l62rCCNeVExYe6hcJXnx7tJDsn2tkfKcy11f8rAYxZJ9iwZ7xykcxJrZhlKGB8P4mWyj6AS7yWH0hsIokHl8ZlYwvWIj1ZYPdzYQG4zOIxGuL35_QKaBUVD99v2e42Y0BltTagND5KrAXi3o3nphnpTdivSx2dH-tG9cSPVdIPOWgK1AcB0e2KbysS60u6s5WzHRQ_uQfg8vCRZBoAikeppb-kxnXoOuADyMto1qLs1hU-cO50DkzvK2quOnr_geECuRR0dzxTl4JVcHYIZ-_7f_fQDqUDIpqfVr65z_ZJULFYzWixgU_mUJuCWtTbabkqP-7uv9nE8jTo59Gxp2JiqSQ0uGvWnfdztmSxvBsnsZSJp8L-YL3e1i-ipEemRKt-UKt8biOFPLcjwlpn64fWrTvVG0R7kjmZ6mo3TBwlG7Nm1qTQrvVzhIhLTxffOcvY9Fa1cYjAwffUZ223u8au-n-UzgPbYPAzP_4v2ni8R6pmvLNxQTxgaxUwTqyj__WJj-ydBIK9pL6Twpy_qoyjLqPIvlB7MgYUaipDcoMyc-twfHDSmku3OLvcoGx2YGe1MzbzhfWsZ5m1aR7YWBMGJ7_bC_zaozKkB5tKuklOcpdU0F5i9sDeIgHSbCTqwFGtCy8R_JRiZP--3cY0kIymOn-SQi_In3eF63BbPtcUJmXxoUOJe-ic4LntL7Chlm0PdFb0a9Ubcn1Ax31bjEnEb3xLDZYYwp7jJM-3c1_O76wvg25PSFOGg_7w1wDyKP-4EVfIR9mKtCjlWDFVdXJ3jODl97SnXAHRkWK6M68Nm31xzvtL-STjgFMiBjrucyFZS-Oi3tg853B9tdXWMhSDVVML3AucOuWAE54rxCbACd9_KWdvmXasiTpsvmELhpUYuE4Qw7fKUYK0t5l29n1WcQBMCSYP8r0GHD4P_7bcdwrIFKH4igl6qAMc7ODXcnBdLqhlJykBHtEia4Z43z3QNtz9Gd6GAcrbVxFLOnryOIJGLifvLvo0FQstwNkIM6kVTGZ9F585DinVxGI_AP5do0zkztuaCDThzS2gVeaxOa4oJohAnVY04yZ3TjcBqMP-0FDmZaMug0wRbz2evxgL8FMvXeTFeubuSTQbYwSIIITjZ5etd8lRk4TN-v_1AOyfFJnIbgJE1GCjSEzllEpveqUNU4wH00Q75r_imzRWdVPXNl-6_14kOaJ2GvxB5vdxYqndiVDshrAlDnQzJEMVEdUJ26VZRxkmVCc6x1o-Iv27m4z_p8SqzPFr6omjz7YM7Cg-ohg2Xk3hatQRkgs85Jfy8t--WEGqUQ-8A1M1q7DBSpqIGuiwyoTThprMOz2KRHPIV0r-it0ly2NyC2fimCFhOdsT7s4rNWnKSpKLTMZgN7Py77oYjwCuoruIMolmKSZbLtYpwFy3mM6tjmqMkyYWbqOITI73A1XGlumHBm5uWVGQAFdVWR1_Ldchvo-L4PP5oF47-wpCAdHtim8TserS0J9y_YgomzpM9bwA4iPZodR8JH00tYmeLkC1-wOLxXgLC20bisYMXXQ58CxWKcoJhZVmvHr3BXUR"
+                    },
+                    {
+                      "text": "```sql\nWITH google_ads_performance AS (\n  SELECT\n    \"campaign_group\" AS campaign_name,\n    SUM(\"ad_budget\") AS total_spend,\n    SUM(\"gross_revenue\") AS total_revenue\n  FROM\n    public.google_ads_meta_blend\n  WHERE\n    \"date\" >= '2025-08-01'\n    AND \"date\" <= '2025-11-30'\n  GROUP BY\n    \"campaign_group\"\n),\nbing_ads_performance AS (\n  SELECT\n    \"campaignname\" AS campaign_name,\n    SUM(\"spend\") AS total_spend,\n    SUM(\"revenue\") AS total_revenue\n  FROM\n    public.bing_ads\n  WHERE\n    \"timeperiod\" >= '2025-08-01'\n    AND \"timeperiod\" <= '2025-11-30'\n  GROUP BY\n    \"campaignname\"\n),\ncombined_performance AS (\n  SELECT\n    *\n  FROM\n    google_ads_performance\n  UNION ALL\n  SELECT\n    *\n  FROM\n    bing_ads_performance\n)\nSELECT\n  campaign_name,\n  (SUM(total_revenue) / SUM(total_spend)) * 100 AS \"ROAS\"\nFROM\n  combined_performance\nGROUP BY\n  campaign_name\nORDER BY\n  \"ROAS\" DESC\nLIMIT\n  10;\n```"
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-61871d23-3b9f-4732-98c6-566ff46b30db",
+                        "args": {
+                          "query": "WITH google_ads_performance AS (\n  SELECT\n    \"campaign_group\" AS campaign_name,\n    SUM(\"ad_budget\") AS total_spend,\n    SUM(\"gross_revenue\") AS total_revenue\n  FROM\n    public.google_ads_meta_blend\n  WHERE\n    \"date\" >= '2025-08-01'\n    AND \"date\" <= '2025-11-30'\n  GROUP BY\n    \"campaign_group\"\n),\nbing_ads_performance AS (\n  SELECT\n    \"campaignname\" AS campaign_name,\n    SUM(\"spend\") AS total_spend,\n    SUM(\"revenue\") AS total_revenue\n  FROM\n    public.bing_ads\n  WHERE\n    \"timeperiod\" >= '2025-08-01'\n    AND \"timeperiod\" <= '2025-11-30'\n  GROUP BY\n    \"campaignname\"\n),\ncombined_performance AS (\n  SELECT\n    *\n  FROM\n    google_ads_performance\n  UNION ALL\n  SELECT\n    *\n  FROM\n    bing_ads_performance\n)\nSELECT\n  campaign_name,\n  (SUM(total_revenue) / SUM(total_spend)) * 100 AS \"ROAS\"\nFROM\n  combined_performance\nGROUP BY\n  campaign_name\nORDER BY\n  \"ROAS\" DESC\nLIMIT\n  10;"
+                        },
+                        "name": "query_is_valid_postgres"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-61871d23-3b9f-4732-98c6-566ff46b30db",
+                        "name": "query_is_valid_postgres",
+                        "response": {
+                          "result": true
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-042a44e6-6f64-4347-8376-477c899f6df9",
+                        "args": {
+                          "request": "{\n    \"client_database\": \"insurance_client\",\n    \"query\": \"WITH google_ads_performance AS (SELECT \\\"campaign_group\\\" AS campaign_name, SUM(\\\"ad_budget\\\") AS total_spend, SUM(\\\"gross_revenue\\\") AS total_revenue FROM public.google_ads_meta_blend WHERE \\\"date\\\" >= '2025-08-01' AND \\\"date\\\" <= '2025-11-30' GROUP BY \\\"campaign_group\\\"), bing_ads_performance AS (SELECT \\\"campaignname\\\" AS campaign_name, SUM(\\\"spend\\\") AS total_spend, SUM(\\\"revenue\\\") AS total_revenue FROM public.bing_ads WHERE \\\"timeperiod\\\" >= '2025-08-01' AND \\\"timeperiod\\\" <= '2025-11-30' GROUP BY \\\"campaignname\\\"), combined_performance AS (SELECT * FROM google_ads_performance UNION ALL SELECT * FROM bing_ads_performance) SELECT campaign_name, (SUM(total_revenue) / SUM(total_spend)) * 100 AS \\\"ROAS\\\" FROM combined_performance GROUP BY campaign_name ORDER BY \\\"ROAS\\\" DESC LIMIT 10;\"\n}"
+                        },
+                        "name": "query_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-042a44e6-6f64-4347-8376-477c899f6df9",
+                        "name": "query_agent",
+                        "response": {
+                          "query": "WITH google_ads_performance AS (SELECT \"campaign_group\" AS campaign_name, SUM(\"ad_budget\") AS total_spend, SUM(\"gross_revenue\") AS total_revenue FROM public.google_ads_meta_blend WHERE \"date\" >= '2025-08-01' AND \"date\" <= '2025-11-30' GROUP BY \"campaign_group\"), bing_ads_performance AS (SELECT \"campaignname\" AS campaign_name, SUM(\"spend\") AS total_spend, SUM(\"revenue\") AS total_revenue FROM public.bing_ads WHERE \"timeperiod\" >= '2025-08-01' AND \"timeperiod\" <= '2025-11-30' GROUP BY \"campaignname\"), combined_performance AS (SELECT * FROM google_ads_performance UNION ALL SELECT * FROM bing_ads_performance) SELECT campaign_name, (SUM(total_revenue) / SUM(total_spend)) * 100 AS \"ROAS\" FROM combined_performance GROUP BY campaign_name ORDER BY \"ROAS\" DESC LIMIT 10;",
+                          "results": [
+                            [
+                              "I4U - Multi-Car Discount - Brand",
+                              4142.011834319526
+                            ],
+                            [
+                              "I4U - Van Insurance - Phrase",
+                              2514.8445686343
+                            ],
+                            [
+                              "I4U - Business Insurance - General",
+                              2222.222222222222
+                            ],
+                            [
+                              "I4U - Life Insurance - Term",
+                              1993.7694704049845
+                            ],
+                            [
+                              "I4U - Car Insurance - Exact",
+                              1806.6561014263075
+                            ],
+                            [
+                              "I4U - Landlord Insurance - Exact",
+                              1732.6017903551833
+                            ],
+                            [
+                              "I4U - Car Insurance - Competitor",
+                              1660.6498194945848
+                            ],
+                            [
+                              "I4U - Home & Contents - Broad",
+                              1467.8539974557198
+                            ],
+                            [
+                              "I4U - Travel Insurance - UK",
+                              1296.111665004985
+                            ],
+                            [
+                              "Car Insurance - Prospecting",
+                              1142.5339366515836
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1762544627.374021
+        }
+      ],
+      "session_input": {
+        "app_name": "agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1762544709.1807182
+    },
+    {
+      "eval_id": "highest_position_keywords_oct_insurance",
+      "conversation": [
+        {
+          "invocation_id": "e-a835b2e9-004f-4309-8261-7ca177fd1742",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Which keywords had the highest positions in October for Insurance Client?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "The query has been successfully executed. Here are the keywords with the highest positions in October:\n\n| Keyword                  | Position |\n| ------------------------ | -------- |\n| car insurance quote      | 5        |\n| pet insurance for dogs   | 6        |\n| home insurance           | 9        |\n| cheap travel insurance   | 12       |\n| van insurance quote      | 17       |\n| motorbike insurance      | 22       |",
+                "thought_signature": "Cp8DAdHtim_4eZH-Y6F0iTiDmr6Qua6B_rKJbqiwI6-WKVNiv8e4EQNrOmIvVQ0ue2vrp9PEoTX0Kam88egAhQht7g7gTB5uo6BvpIlh8G40yw3f1IU47LwhV03F1MKvcpfukCs69oKyN6prLO5wQmpOAsVZoJHfAuOjaGIUoKuaszGlKARDfgi_t7THC601OoROl4vUOPgjTiqXajdXThs1Er0Lvhh5_JJ34fyIxipCkSpjUVV1h4hm4gXUXSCGgkRmuiAjsuY3pkumJPWj94f8_ThsUef5Qx80LUVKLmorHISijB2Gdd_7PXmft1w9QmQn2XSxMsKZBcQl-HB5B9Gv8PRtNXkoM_z5btX8GWPxkuSj7bCh8FNUNDcziyzqaCYsb24bf1JBEimc1hheVyrntvJ2DsSXrYRmmPwP-q-pCU8vrSr8_luTi8-_Jk0CB2xRlgWHHzwFIUFbz6w5j5_Q1cU1IKF4-dtEZbsXn7m2q23hU_wRZmzlSPqoMYWHkh_C5FuT8Y5m8-uYFtoNN6OwwHPoumrMA_4qVhdm254RXA=="
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-77d9fd91-ed99-4bec-ab11-7b16fb4ddae9",
+                        "args": {
+                          "client_name": "insurance_client"
+                        },
+                        "name": "get_context"
+                      },
+                      "thought_signature": "CqQNAdHtim_pZ8Vy8jK0k46sp77vOzBA6wlRj7Qk1JTey4lY0JkLPXzzFHlRg6RB-lRaz5GyL5MONI2ne1jai8gI8-1INFEnDZHvf0y-xAorv3nVvssDyc2PX4fSj7xIATzcfDbjb23BbWdkyWrbLlXiCZuERicI7N5n6x7Bzbjth5E7MSx2DZn1S5vNxVHevZIvX4BDZkjENN3x1N_8ct4a9m-WAgH2s2C3PDVGPIMPElKhixqnj7AazKRuZXcnuEBt6SBclJ1GXoDPInChkuKk1Xsfb53XmRWdAnUZU87SaIEitTDzkfvgkot7CDR_RlSABVb0G5LuPCtQEvL_pozgi2dhKtwb4gYfwp0LbSc92mtHXqonS7eOkQErWi33skIq_xz3FLRQ_egLf7VfAcw9l1S_SoOAo6COGn0IPS_LZCCaJUpN6PdndvSTLpb_Gjd9N5OR4XoYE3cJ57NCbnUXOp6gEY7G5RcRdFTTiFOgzGk4m_JRUeV51PFbBytubmQ6V2Tx9K360QUecGraHjFp2CpbuUQOhw2ph1vdC3riEPsbTsKdUimKCBE_6J6p8Uqw6Phnrj4Ahkg_vBJnyhLcxqA43Kl0iOSu7M9Av2DAu2vEhX1KXabcE6is9o3zzj7IFZFer8basqEMx1-NQUlMOIa2vopCaDo1hrwRHY3rzP4GyrEyqAuoIFeMYeqpi0ta-srS0BZ-ZrcSjY35bntjFo-5jhgNDiq3dRxRtLMSmzDLhHsv0wRHL2QvxHj-2RtWlium1-tnHWAI4EGIlG2LUFI5BmwsJlK6FW05AbfMLUXTMhoAE2hMT-JLU6ZVC9iXgRzKJbH8u2JVhq4D18zHkjPLldzLvBXakCDAdhZDNzmTZJKsERIgy4teIdn3LS_IGGj9crvXj6syVMmkAHJ3Mqtkcw4I-_1xKzOMPGh-fwH0HwtVoNZyOTn1cPpRns4ggTk5EkDDAEYYlkZhY5QUMd3zL1oIkt-g2_3aE2hDl9_8lpyPUBPpkvG6Hh8W_N6xqUTJhwyY72bJaoNLVGuhCrputf6usXNLa-oq1FFzAIb051CeWX3tFwoIb4uoSYKzPIDmBo-zKr0MYm24630MV6_WpIftScouD8VpvZIQRR0R-SujObb9IA0S3sz0zNznciqQCZAzqfuEZAmA8Z0CmazhtCHWlTaenVs3oJMvXBoBzBMymN7ljYSkI1MosAoEQ98g0PUzkub-1zj7V27X4X39BsNE1jWCe0EewvshuPImpdfUrc3jYcCnhNT6BuK_tABfRVtx9HhkYlh2YiIau-JZ8fPBVaerDSXscFgQ-2-XPYsirM8pKyPCXMU5J_aFfi_ooN4NUaUAO1wOAznl-BKzEJmbVfm-U6ClO-Z6zivAU8fVk0Bg9jSc9qbUWDNkU2X1yd-8mQbq-DbougFd91zkYOSzRzWMtebxDIDjZ_vpDsIHjVouBSbrn4WClsZv-W2jgfe386VGcNawDpu8kRy1i8nhvrF3E0zi0bla53xEM5EMXIQPVua9v_kSEAeGkrJhuK3LGuckwPLLPM5fU1jqH8S14FOrOFs0OJiT5Wruz1O9WoeyPR27_jOPwAG1FYFDB5NAxGH04t_bL5xqJcjq75_qX69800SQ3rufoZp36SQOw9aP540KKw0CRJb5oPtK85LhCY37Jbgs5JiNuXoepkGflJfW_1Kb0PI_e1btER5_7Ip-DPbyf0k2IkuhzySG1xz8oQk6i07BcRP5le3JqgOpJNcCYCBpWhuP8XAhoajwFJMSElueKnR-_DMOZL_y30xK5WImiwnIS6NZNIwXsXWjBrMGkoM1ny11O1FBY4VP3_bJmsfHyv6rIqlt5DWmKsmpDRq2xAfLAzNumcvZoIR2390dOaGI8oSt3hbEa3H2P-VmpB9UWYiGt1I8uk1y5xkqIZ0lKr_NHVR5DPMARiVjMF9-Ngl42uCz_FbQp0tH2prrpH03sNd9QBvPd5iUtfJYmf7ODuZkmMf_MHpPCEDgCShdkAesWSx326kMxqVotCaeEnhMVu8OPLgYcocd0VmpUA44YkyctYvHBL23Nfl8yiX3yPhClHKPnKAHbUzW516JF6hb-eVJsB19mYjpWstU33EwBzzh1KkzhBRLFA6mQCFjO-6brF6YkWxAEFDXOinBPhFI02lS89aliy9s0Uk0uX-SygaNbKSak_faBFlU64MU9xP5aZFBdrM8vHATp6-tHpq5U_sJyRgVgweA_dHh69srl_bZjbmbzEoyxac="
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-77d9fd91-ed99-4bec-ab11-7b16fb4ddae9",
+                        "name": "get_context",
+                        "response": {
+                          "context": [
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "date",
+                              "DATE"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "campaign_group",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "adset",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "ad_budget",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "impressions",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "orders",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "google_ads_meta_blend",
+                              "gross_revenue",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "timeperiod",
+                              "DATE"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "campaignid",
+                              "BIGINT"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "campaignname",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "spend",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "clicks",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "impressions",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "conversions",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "revenue",
+                              "DECIMAL(10, 2)"
+                            ],
+                            [
+                              "insurance_client",
+                              "bing_ads",
+                              "date_added",
+                              "TIMESTAMP WITH TIME ZONE"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "profile",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "date",
+                              "DATE"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "keyword",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "website",
+                              "VARCHAR(255)"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "url",
+                              "TEXT"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "position",
+                              "INTEGER"
+                            ],
+                            [
+                              "insurance_client",
+                              "seo_ranking",
+                              "average_monthly_searches",
+                              "INTEGER"
+                            ]
+                          ],
+                          "client_week:": "Sunday - Saturday",
+                          "calculated_fields": [
+                            [
+                              "google_ads_meta_blend",
+                              "metric",
+                              "Click Through Rate",
+                              "sum(clicks)/sum(impressions)"
+                            ],
+                            [
+                              "google_ads_meta_blend",
+                              "metric",
+                              "Return on Ad Spend",
+                              "sum(gross_revenue)/sum(ad_budget)"
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-4266dc63-8405-4e35-af42-3cf179a7bf8e",
+                        "args": {},
+                        "name": "date_today"
+                      },
+                      "thought_signature": "CuoJAdHtim9ehw8M8aiRjFeWHApAdWej2-BPI2CWkWRzSjtZGlxHbET6PvfWwpCA3KK5DkQwnYDDrlWwA8NqCVp43r29cG5UASfGV6QJapWTqg5RHDv4Np6Z-ougoFMNEDs_E9a4s4P5-4MIJicMNYQy3mx_8QFBm6lqpby26cn88bar8wme05mYgEzp_3_6Cxcp2qO1w6Ypk7ey6FrLCp03qZ_5-CUBF-TYmICxh6O2rED8Vh2OW8DGXUN6lMU35lO4-qUJ-2fOV6pMdesF4cwCNxqI0Zf6zfAp41j_g7I7DYve8dEjqBA2QPm3O6lIphfoRPOwaI3xT87oiIrHRIFq3lxwf26mqD1DEDg7rrgr802ubvRzjCG9TgJ7zfqGBWGe8u9KQoCP-0jEuF8wex9rlocmjVHXRCelxwlr-FIcA3mTunC8V-fxj2V4wSQqKM3PyuTbJwaFKYnEkrzM4GMOUoHV1iYRUWADjyr07bzLGstvGPxotwptEbfWz4d9riX08fFdCVB9yZLoXu4a9R7qUPrnue7-CjrLIhoPLNUFtWoQ887mTqpk6mgtu-y5Q1Z-m9N5V0i42xqdLX7Mgy9zSI5QKGh2IkZVX7-SXIGmIozw2ROQXa_2Os1CqkT-v6UPvFYlp-ztXHmLOyC6wkA8_HhZZ-BDBU_bcjRZX9OVN4gED-610A4bTS7iXG3j3rRvR3t5jrxVwLsEOrrPfVUT7QI9KNQYg5cAtgRVoTicD7qssTXuLhlbDsmmi9DO5hOeRFKIKHssEVkY9hcV5S1fwptF-FJBf8unyrSBrjkdperb8ZbRTxBt_ep1kXpPQlQkPB7jHdKn8ksLqyJu_uzaNUmB1OupBh89jSuQt-7jVOLoVv_vVmQM5mgV41z8eJnoPO2SRqhi4sJ4PzXHK9FvPXDi_iS445xrchUMa8HH0ReVwNw_7YXuLIcZYGAK7DdlOILgjMEPmF2OdgcsWX5z23Cqt1mBiRsAhqeL436-zL302u3Ql95nV_Gb773w3uTVd_IEhCBLN0hHqRfPARw6ws9C0Q6EAM4pCW1HngP4TyeeNuKmZFoVXICWUMKPTE4AZfk5-AARSqdbllao3NcvYRFDh0jdaNhNr2GOu6nLCaQT0yge0k0JvZkwErmMT53iRJUq821TlMiEdLUUy2-VAoyYsJizf3lFT7gz7l0C9bnkz8KEfI0cyIcNyRY5JUn7wQAxWXoibkCMgqZc8k1qTno0kKq_rzIxzzVCtPHo00eQLaaOpcmMQ8kvufdtDHeqztusMjqFCADidXuZLesyfNnmfvP8Ex3Q-NON_dZ8pAxMb4AGhwCMcmkULzDeL72_dXtiqUXtYiotYNeJB6LAevSC1mDxYO57W2dIL35uPayQz2W3p-_jL0ATVQ30bS4m47ZupLGnLBoTJCAdyAXFdG_vdKwBhiyon-acOWvuyrSmR9MxFpHZMcZRqWRsSX_WCTlbR4Ksi4hgiHOALhK2P_CrlRj1WaI3Ceji-26aDy6tj2FdP3wu-8Vsgj15jmLveOSS3hj3oQTwFMikRxnV_R5w4u_3Pl8n2CH0MKnZ6Ool9I2iD5aBprtw_Y5Hd6cozawlPqBFBjrohiEttQEQGeIfiB1mfoXrjzL2K-C-vnsndjv44nGRcFxmxtvIXYi3GP4f0tZX5KGR3g=="
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-4266dc63-8405-4e35-af42-3cf179a7bf8e",
+                        "name": "date_today",
+                        "response": {
+                          "result": "2025-11-07"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Of course. Here is a query to find the keywords with the highest positions for the month of October.\n\nI have used the following context to construct the query:\n\n*   **Table:** `seo_ranking`\n*   **Columns:** `keyword`, `position`, `date`\n\nI have interpreted 'October' to be the month of October in the current year. Today's date is 2025-11-07, so I have filtered for dates between 2025-10-01 and 2025-10-31.\n\nHere is the query:\n",
+                      "thought_signature": "CucDAdHtim9RhOVMlJAdQl-9arGwtGwrd2vXLKywt_TjT-UY8iQPvhS3_bgG7Y1jRV9soHeQe7X0d9223t3uq0uep9hyBMpptX_Hd4YVqCOPf2tD-cjO_E1QvzhUTE9WxDHNPx1Yi6-g-HqolPo2Z-_rPE4HH8Tk_Ze8nziDVNJOpyHu-r_3KJMhM4gjSUDMQtvkQh3ITfefKn1pdxzDNmqCRTsjgSE6WNLsM5TatBW4g1iLgYlCzBkTAO6fWurRbb7mcX8NMfDNG0dGm6T45xUS0h_wKJLyhS1gl-kKxRZxqa8hXkgawB-ZApfQqFPdMODOkDRYaPH4Nr8jlz1wlUd1uEY-FXJpAMPtEz_cT_vj4EgYWiT4NR9BCgolyW44_LsUcRkFZ-hWSpwc6CWkcHRl1UjM3VLaXdELx0-0L7pQfI6ZiUNG3daz8EaYku-Gz1hVwvMNp7YMvUw6MmME3StKXt3abN_xfH-yKxhdk8MZs2zFnk0AfH3-16B5_S0qOussYw7WTj4LbofFO4zf9KK7QE5GvCc2dzRTjC5w24ph6yAW_QBGW2-ucELdJMIEH0vbyM3Jb4eNwznAYdkHugiisVZ5n_0ffmZhT-4_32PNl_iY87Xq3xu2ijCde3sbn4XJ59uYefBvNAq-AQHR7YpvK51LqIyo7P2azKruTCGZvZXOc6hV3BXTIvjUCHSwCOFNUla2kQ2-MBz-WU3a3A2w3RDOpwRnf2xKE1YJeTqVve0SIsdpNTZS9a8rIIHLG-3wqCJgiJvjxd6MyQA6qod9L4OpzNo7lQ9ob4HqxwrZ_DCE8VFJqarI1yAeRK4waPyk_u_rA8_leke3hDI7M-sub_HZCaICuecfwq4xTsJufnSm8LpVMcyx0B8pmk31_mfI4YH9FyHM_QEKmgEB0e2Kb1ddJKiJFm4ItPaQKZeMwSyy9SaJBpwc2k1LEIAseO7ELbTkjIoIQvIEhMDmZM6giNlkLQNZhyv9pkwRn9FwzzWjmxWnMjHDHLkHXQknPi7Ra9RkztEvKHLgCn0cp95MXYuiDo1yzPIHd8WhZBEnvJV63IeVm_5ilTh4GsmWkvEQ3BowOcMqAjP7U0f88y6ZELgTF7MR"
+                    },
+                    {
+                      "text": "```sql\nSELECT\n  keyword,\n  \"position\"\nFROM\n  public.seo_ranking\nWHERE\n  date >= '2025-10-01' AND date <= '2025-10-31'\nORDER BY\n  \"position\" ASC\nLIMIT 10;\n```"
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-d8eb6f29-a863-4fcf-8bac-9f6a8b943d80",
+                        "args": {
+                          "query": "SELECT\n  keyword,\n  \"position\"\nFROM\n  public.seo_ranking\nWHERE\n  date >= '2025-10-01' AND date <= '2025-10-31'\nORDER BY\n  \"position\" ASC\nLIMIT 10;"
+                        },
+                        "name": "query_is_valid_postgres"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-d8eb6f29-a863-4fcf-8bac-9f6a8b943d80",
+                        "name": "query_is_valid_postgres",
+                        "response": {
+                          "result": true
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-ec374b4e-38b5-4ea1-bc99-afa60994454c",
+                        "args": {
+                          "request": "{\n                \"client_database\": \"insurance_client\",\n                \"query\": \"SELECT keyword, \\\"position\\\" FROM public.seo_ranking WHERE date >= '2025-10-01' AND date <= '2025-10-31' ORDER BY \\\"position\\\" ASC LIMIT 10;\"\n            }"
+                        },
+                        "name": "query_agent"
+                      },
+                      "thought_signature": "CocCAdHtim-aRKfKvxdx1pW1FUq1u6JXqRIPRYITWqjGcBJEKPW-stPkhHeeTs2clF_dTup_oZ57AXFbpmo873KHis0GaTl9YL_g4lNz4YlDNurwskLeDEZ0NU45AAZWElJp297mZssfEVZY5PVExVan01uWJFxKlEUs6vvHkWSUHe4WEz2o34C2rOu6cW2Bd7xmD6qYhHXZPjCPhPwqde5tageQopwO6lQaShjgrgKlN9RCmFI0k4afhmCj8OqIbBcjW88zHoeRfXgN9AfywWRWToTz-iqtnW-ACObOsbFUCEdRK3OvM0cNfbtxkWDr87DRsdf4g4zYDu24y2Ew5VUE_3xKQ8Pc1WgK8wEB0e2Kb5uUqweKXUDFalKnsKbtGou_inugF7ELaQcYDfNf5CJWgXg4QNSK_JXigfkCdKzcAdDL7_i1sI6-2OF1tLd0LJMtsE8tUSgZi5Qh_V-c4QRlzQmmvs434xMUAxQ7mwQ8rKhIDUVcZeF7x_DNus9Ie0De5lyFOSPlLJUobU3DcAkuH0naccvxmDHWzWlz9mLpx-F5erT8wRQpwUEdkOS91NyYfJGdpBqH59e__9acEoQPNSdWxS4WrWYMNhxvj5BQWnya729DRpWHsf3x0fGmK3epMWicGafOUpOwQsGfuTo7PbmF--HNsK-qi-dQPJIKWgHR7Ypv4fzg_DWQQx8T60UD6Q1RBW0_GElTrSkmtv5vOfWWhGXIHuCVxr0H2fyMUJc3FmyeYzK88Ueyt556XtEpCHV7gaaPbfx1cPjQyOVAAV1vnGDfQoiaPw=="
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "postgresql_generator",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-ec374b4e-38b5-4ea1-bc99-afa60994454c",
+                        "name": "query_agent",
+                        "response": {
+                          "query": "SELECT keyword, \"position\" FROM public.seo_ranking WHERE date >= '2025-10-01' AND date <= '2025-10-31' ORDER BY \"position\" ASC LIMIT 10;",
+                          "results": [
+                            [
+                              "car insurance quote",
+                              5
+                            ],
+                            [
+                              "pet insurance for dogs",
+                              6
+                            ],
+                            [
+                              "home insurance",
+                              9
+                            ],
+                            [
+                              "cheap travel insurance",
+                              12
+                            ],
+                            [
+                              "van insurance quote",
+                              17
+                            ],
+                            [
+                              "motorbike insurance",
+                              22
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1762545699.837986
+        }
+      ],
+      "session_input": {
+        "app_name": "agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1762545758.540169
+    }
+  ],
+  "creation_timestamp": 1762510083.622043
+}
